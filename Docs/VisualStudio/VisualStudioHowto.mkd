@@ -1,6 +1,6 @@
 # Visual Studio Howto #
 
-
+本文集汇了与Visual Studio有关的一些资料。
 
 ## 参考资料 ##
 
