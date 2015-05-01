@@ -3,8 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{904EEB25-1C33-4AE7-80FB-2078C2E9418E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VisualStudio", "VisualStudio", "{105C81DF-2297-4B8B-9554-180081CE9F68}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\VisualStudio\VisualStudioHowto.mkd = Docs\VisualStudio\VisualStudioHowto.mkd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenGL", "OpenGL", "{8A4C29D7-EE74-4C19-9AAF-B63B14873CB1}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{105C81DF-2297-4B8B-9554-180081CE9F68} = {904EEB25-1C33-4AE7-80FB-2078C2E9418E}
+		{8A4C29D7-EE74-4C19-9AAF-B63B14873CB1} = {904EEB25-1C33-4AE7-80FB-2078C2E9418E}
 	EndGlobalSection
 EndGlobal
