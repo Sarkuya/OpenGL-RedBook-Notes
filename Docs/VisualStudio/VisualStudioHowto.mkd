@@ -1,8 +1,16 @@
 # Visual Studio Howto #
 
-本文集汇了与Visual Studio有关的一些资料。
 
-## 参考资料 ##
 
-1. How do I add an existing Solution to GitHub from Visual Studio 2013: <http://stackoverflow.com/questions/19982053/how-do-i-add-an-existing-solution-to-github-from-visual-studio-2013>
+## Dependencies on Projects ##
 
+All other projects depend on SharedComps. So these projects should have the configuration as following:
+
+![Projects Dependencies](imgs/VS_OpenGL_Projs_Dependency.png "Projects Dependencies")
+
+
+## References ##
+
+1. StackOverflow: How do I add an existing Solution to GitHub from Visual Studio 2013: <http://stackoverflow.com/questions/19982053/how-do-i-add-an-existing-solution-to-github-from-visual-studio-2013>
+
+2. MSDN: Walkthrough: Creating and Using a Static Library (C++): <https://msdn.microsoft.com/en-us/library/ms235627>

@@ -12,12 +12,44 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VisualStudio", "VisualStudi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenGL", "OpenGL", "{8A4C29D7-EE74-4C19-9AAF-B63B14873CB1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github Items", "Github Items", "{66476D74-CC3B-4F62-9D8C-002F76795626}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SharedComps", "SharedComps\SharedComps.vcxproj", "{7863518A-1DB4-41C1-92CC-374B0FAEE53C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chap_01", "Chap_01", "{D95043DA-03EC-4E52-BA19-18C1A539B59A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Triangles", "Chap_01\Triangles\Triangles.vcxproj", "{227F892E-4D13-42C2-8DB8-C73AC017C482}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imgs", "imgs", "{E8F2A4E8-BBD1-475E-9851-C039B6FEEB73}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\VisualStudio\imgs\VS_OpenGL_Projs_Dependency.png = Docs\VisualStudio\imgs\VS_OpenGL_Projs_Dependency.png
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7863518A-1DB4-41C1-92CC-374B0FAEE53C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7863518A-1DB4-41C1-92CC-374B0FAEE53C}.Debug|Win32.Build.0 = Debug|Win32
+		{7863518A-1DB4-41C1-92CC-374B0FAEE53C}.Release|Win32.ActiveCfg = Release|Win32
+		{7863518A-1DB4-41C1-92CC-374B0FAEE53C}.Release|Win32.Build.0 = Release|Win32
+		{227F892E-4D13-42C2-8DB8-C73AC017C482}.Debug|Win32.ActiveCfg = Debug|Win32
+		{227F892E-4D13-42C2-8DB8-C73AC017C482}.Debug|Win32.Build.0 = Debug|Win32
+		{227F892E-4D13-42C2-8DB8-C73AC017C482}.Release|Win32.ActiveCfg = Release|Win32
+		{227F892E-4D13-42C2-8DB8-C73AC017C482}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{105C81DF-2297-4B8B-9554-180081CE9F68} = {904EEB25-1C33-4AE7-80FB-2078C2E9418E}
 		{8A4C29D7-EE74-4C19-9AAF-B63B14873CB1} = {904EEB25-1C33-4AE7-80FB-2078C2E9418E}
+		{227F892E-4D13-42C2-8DB8-C73AC017C482} = {D95043DA-03EC-4E52-BA19-18C1A539B59A}
+		{E8F2A4E8-BBD1-475E-9851-C039B6FEEB73} = {105C81DF-2297-4B8B-9554-180081CE9F68}
 	EndGlobalSection
 EndGlobal
