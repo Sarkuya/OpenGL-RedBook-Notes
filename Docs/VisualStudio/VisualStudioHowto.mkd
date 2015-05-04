@@ -4,7 +4,7 @@
 
 1. Start up Visual Stuio.
 2. In Team Explorer, click on the "Connect to Team Projects" button.
-3. In case you see no OpenGL-RedBook-Notes entry under Local Git Repositories, click on Clone button, and then copy and paste the HTTPS clone URL from the project's home page on GitHub.
+3. In case you see no OpenGL-RedBook-Notes entry under Local Git Repositories, click on Clone button, and then copy and paste the HTTPS clone URL from the project's home page on GitHub (or this: https://github.com/Sarkuya/OpenGL-RedBook-Notes.git).
 4. Double click on OpenGL-RedBook-Notes, which would open this repository in Visual Studio.
 5. Under Solutions, double click on OpenGLRedbookNote.sln, which will open the solution in Visual Studio.
 
@@ -25,13 +25,17 @@ All other projects depend on SharedComps. So these projects should have the conf
 
 ## References ##
 
-1. StackOverflow: How do I add an existing Solution to GitHub from Visual Studio 2013: <http://stackoverflow.com/questions/19982053/how-do-i-add-an-existing-solution-to-github-from-visual-studio-2013>
+### Visual Studio ###
 
+1. StackOverflow: How do I add an existing Solution to GitHub from Visual Studio 2013: <http://stackoverflow.com/questions/19982053/how-do-i-add-an-existing-solution-to-github-from-visual-studio-2013>
 2. MSDN: Walkthrough: Creating and Using a Static Library (C++): <https://msdn.microsoft.com/en-us/library/ms235627>
 
-3. GitDocs : <http://git-scm.com/docs>
+### Git ###
 
-4. Microsoft: Git prompt tools: <https://msdn.microsoft.com/en-us/library/dd286572(v=vs.120).aspx>
+1. GitDocs : <http://git-scm.com/docs>
+2. Microsoft: Git prompt tools: <https://msdn.microsoft.com/en-us/library/dd286572(v=vs.120).aspx>
 
-5. Microsoft: Visual Studio Markdown Mode Extension: <https://visualstudiogallery.msdn.microsoft.com/0855e23e-4c4c-4c82-8b39-24ab5c5a7f79/>
+### Markdown ###
 
+1. Microsoft: Visual Studio Markdown Mode Extension: <https://visualstudiogallery.msdn.microsoft.com/0855e23e-4c4c-4c82-8b39-24ab5c5a7f79/>
+2. Daring Fireball: Makdown Syntax: <http://daringfireball.net/projects/markdown/syntax/>

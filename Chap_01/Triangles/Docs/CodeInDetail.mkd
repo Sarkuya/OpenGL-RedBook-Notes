@@ -1,19 +1,51 @@
 # Triangles in Detail#
 
-Project: Chap_01/Triangles
+**Project**: Chap_01/Triangles
 
-Outline: Draw two blue rectangles in screen
+**Description**: Draw two blue triangles in screen
 
 ## About Triangles ##
 
 This is the first project.
 
+To make triangles shown in screen, we need 2 steps:
 
-## What we do in init() ##
+1. Generate the vertex array object and setup the data associated with it.
+2. Rebind the vertex array object and draw it.
+
+We deal with the first task in init(), and the second task in display().
+
+## What We Do in init() ##
 
 1. Genreate and bind a vertex array.
 2. Copy the data in vertex array to a buffer.
-3. Tell the OpenGL how to the data from data store of the buffer.
+3. Complie shaders.
+4. Tell the OpenGL how to use the data from data store of the buffer to feed the shader.
 
-## what we do in display() ##
-l
+
+### Creating and Binding A Vertex Array Object ###
+
+    void glBindVertexArray(GLuint array)
+
+When parameter array is first bound, a new vertex array object will be created. 
+
+    void glBindBuffer(GLenum target, GLuint buffer)
+
+
+
+## What We Do in display() ##
+
+
+## Key Functions in Triangles Project ##
+
+* *glBindVertexArray*
+* *glBindBuffer* and *glBufferData*
+* *glVertexAttribPointer*
+* *glDrawArrays*
+
+
+
+
+
+## References ##
+1. OpenGL 4.5 Reference Pages: <https://www.opengl.org/sdk/docs/man/>
