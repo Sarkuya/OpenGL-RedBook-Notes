@@ -26,11 +26,14 @@ Some modification of the sample codes are made for lessening learning curves.
 
 ## Environment Preparation ##
 
-You are considered as having previously installed the following compoents:
+You are considered as having previously installed the following components:
 
 * Visual Studio Commuity 2013
 * Visual Studio Markdown Mode Extension
 * freeglut
 * glew
 
-That's all. 
+## Usage ##
+
+1. Fork, clone or download the project.
+2. Double-click on the OpenGLRedbookNotes.sln in the root directory to open the solution in Visual Studio.
