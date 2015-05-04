@@ -1,6 +1,12 @@
 # Visual Studio Howto #
 
+## How to clone the Project into Visual Studio ##
 
+1. Start up Visual Stuio.
+2. In Team Explorer, click on the "Connect to Team Projects" button.
+3. In case you see no OpenGL-RedBook-Notes entry under Local Git Repositories, click on Clone button, and then copy and paste the HTTPS clone URL from the project's home page on GitHub.
+4. Double click on OpenGL-RedBook-Notes, which would open this repository in Visual Studio.
+5. Under Solutions, double click on OpenGLRedbookNote.sln, which will open the solution in Visual Studio.
 
 ## Dependencies on Projects ##
 
