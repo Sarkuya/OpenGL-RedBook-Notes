@@ -26,6 +26,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imgs", "imgs", "{E8F2A4E8-BBD1-475E-9851-C039B6FEEB73}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\VisualStudio\imgs\VS_OpenGL_Projs_Dependency.png = Docs\VisualStudio\imgs\VS_OpenGL_Projs_Dependency.png
+		Docs\VisualStudio\imgs\VS_OpenGL_Projs_Include_Dir.png = Docs\VisualStudio\imgs\VS_OpenGL_Projs_Include_Dir.png
 	EndProjectSection
 EndProject
 Global

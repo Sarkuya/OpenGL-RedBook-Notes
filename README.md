@@ -12,11 +12,11 @@ OpenGL is a great API for computer graphics computing. However, it is not easy t
 * OpenGL has lots of functions
 * From 3.1, fixed-pipeline functions are abandoned and Shader is in favour
 
-In order to learn OpenGL programming efficiently, this project is made. The projects aims 3 goals:
+In order to learn OpenGL programming efficiently, this project is made. The project aims 3 goals:
 
 1. Providing a runnable envirenment
 2. Noting as much as possible from aspect of a OpenGL beginner
-3. Do research by getting your hand dirty
+3. Doing research by getting your hand dirty
 
 ## About Sample Codes ##
 
@@ -26,10 +26,10 @@ Some modification of the sample codes are made for lessening learning curves.
 
 ## Environment Preparation ##
 
-You are considered as having previously installed the following commopents:
+You are considered as having previously installed the following compoents:
 
 * Visual Studio Commuity 2013
-* Viusal Studio Markdown Mode Extention
+* Visual Studio Markdown Mode Extension
 * freeglut
 * glew
 
