@@ -4,9 +4,43 @@
 
 **Description**: Draw two blue triangles in screen
 
-## About Triangles ##
+## OpenGL Programming Concepts in Background ##
 
-This is the first project.
+This is the our first OpenGL application.
+
+You are not dealing with a task as easy as driving or using a computer in OpenGL programming.
+ Rather, you are making a car, or making a computer. It might frighen you, but it's not the fact.
+ To help you achive such goals, OpenGL API has sent many professors to stand by your side.
+ So, your mission is to understand what you are doing, get to know what tasks thses professors can do,
+ and what tasks they can't do, and then issue right commands to them. Then your mission is accomplished. 
+
+To have at least some knowledge of OpenGL programming, you would have to get familiar with some basic concepts in background.
+
+OpenGL is a client-server system, which has 2 meanings:
+
+1. In a network, the client will issue OpenGL commands, while the server will render the image;
+2. In a single computer, the client is the application you'are writing, while the server is OpenGL implemetation of the graphics hardware.
+
+So, when we are writing an OpenGL application at most time in a single computer, we are actually making use of the functionality of the specific graphics card installed in our computer to render the images.
+
+A pixel is a smallest visual element in screen. No matter how the rendered image is complicated, it is composited of various of pixels. Each pixel has attributes such as position, color, etc.
+ For each pixel, graphics card has corresponding memory to store its information. And when we put or modify the data in these memories, images on the screen will reflect immediately.
+ These memories are called **framebuffer**.
+
+However, we are **NOT** to find where these framebuffers are and manage the data in it. That's boring.
+ We are doing a more easier job here. We specify vertices' position and color in client in some coordinate systems that we are familiar with, and it's the responsibility of OpenGL to map them in framebuffers.
+ This is called **rasterization**.
+
+In order to improve performence, some data in our application would nevertheless be copied to framebuffers. Again, it's easy since we care about only what to copy and **NOT** how to copy. 
+
+OpenGL shaders are special funtion that the GPU (Graphics Processing Uint) will execute.
+
+While an OpenGL might be compicated, its basic structure is very simple:
+
+1. Initialize the state wherein we specify how to render objects.
+2. Choose which objects to be rendered.
+
+
 
 To make triangles shown in screen, we need 2 steps:
 
