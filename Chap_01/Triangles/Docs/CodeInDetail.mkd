@@ -43,7 +43,7 @@ In a client-server network, the client computer issues OpenGL commands to the se
  the netwok's inefficiency is obvious. 
 
 OpenGL take such a approach - OpenGL server created vetex-buffer objects (**VBOs**) to allocate memory chunks to store the vetices data,
- tagged (or indexed) with the vetex array object (**VAO**) names. And each time the OpenGL application needs to render images using these vetices data, it does not actually
+ tagged (or indexed) with the vertex array object (**VAO**) names. And each time the OpenGL application needs to render images using these vetices data, it does not actually
  transfer vertices data from the client, it just tell OpenGL server that it would like to use which VAO's buffer data by rebinding a specific
  VAO as the current VAO.
 
@@ -75,16 +75,113 @@ Graphics hardware has a small but very fast memory. To efficiently improve perfo
 
 We need to supply these data to shaders in a specific way - a shading way.
 
-## What We Do in *init* Routine ##
+## Source Code for triangles.cpp ##
+
+Time to take a peek at the source code.
+
+    #include <iostream>
+
+    #include "vgl.h"
+    #include "LoadShaders.h"
+
+    using namespace std;
+
+    const int WINDOW_WIDTH = 500;
+    const int WINDOW_HEIGHT = 500;
+
+    GLuint    VAOs[1];
+    GLuint Buffers[1];
+
+    const GLuint NumVertices = 6;
+
+    void centerWindow() {
+	    glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+	    glutInitWindowPosition((glutGet(GLUT_SCREEN_WIDTH) - WINDOW_WIDTH) / 2, (glutGet(GLUT_SCREEN_HEIGHT) - WINDOW_HEIGHT) / 2);
+    }
+
+    void compileShaders() {
+	    ShaderInfo shaders[] = {
+		    { GL_VERTEX_SHADER, "vs.glsl" },
+		    { GL_FRAGMENT_SHADER, "fs.glsl" },
+		    { GL_NONE, NULL }
+	    };
+
+	    GLuint program = LoadShaders(shaders);
+	    glUseProgram(program);
+    }
+
+    void init(void) {
+	    glGenVertexArrays(1, VAOs);
+	    glBindVertexArray(VAOs[0]);
+
+	    GLfloat vertices[NumVertices][2] = {
+		    { -0.90, -0.90 },  // Triangle 1
+		    {  0.85, -0.90 },
+		    { -0.90,  0.85 },
+		    {  0.90, -0.85 },  // Triangle 2
+		    {  0.90,  0.90 },
+		    { -0.85,  0.90 },
+	    };
+
+	    glGenBuffers(1, Buffers);
+	    glBindBuffer(GL_ARRAY_BUFFER, Buffers[0]);
+	    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+	    compileShaders();
+
+	    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
+	    glEnableVertexAttribArray(0);
+
+	    glClearColor(1, 1, 1, 1);
+    }
+
+    void display() {
+	    glClear(GL_COLOR_BUFFER_BIT);
+
+	    glBindVertexArray(VAOs[0]);
+	    glDrawArrays(GL_TRIANGLES, 0, NumVertices);
+
+	    glFlush();
+    }
+
+    int main(int argc, char** argv) {
+	    glutInit(&argc, argv);
+
+	    glutInitDisplayMode(GLUT_RGBA);
+
+	    centerWindow();
+
+	    //glutInitContextVersion(3, 2);
+	    glutInitContextProfile(GLUT_CORE_PROFILE);
+
+	    glutCreateWindow("Triangles");
+
+	    if (glewInit() != GLEW_OK) {
+		    cerr << "Unable to initialize GLEW ... exiting" << endl;
+		    exit(EXIT_FAILURE);
+	    }
+
+	    if (GLEW_VERSION_4_4) {
+		    cout << "Your graphics hardware supports OpenGL 4.4!" << endl;
+	    }
+	    else if (GLEW_VERSION_3_3) {
+		    cout << "Your graphics hardware supports OpenGL 3.3!" << endl;
+	    }
+
+	    init();
+
+	    glutDisplayFunc(display);
+	    glutMainLoop();
+    }
+
+### What We Do in *init* Routine ###
 
 1. Generate and bind a vertex array.
 2. Copy the data in vertex array to a buffer.
 3. Complie shaders.
 4. Tell the OpenGL how to use the data from data store of the buffer to feed the shader.
 
-
-
-### Creating and Binding A Vertex Array Object (VAO) ###
+#### Creating and Binding A Vertex Array Object (VAO) ####
 
     void glGenVertexArrays(	GLsizei n, GLuint *arrays);
 
@@ -94,7 +191,7 @@ Applied for new vertex array object names. OpenGL manages these names. Names are
 
 When parameter array is first bound, a new VAO will be created. And only at this binding point, the VAO's state and type are acquired.
  
-### Creating and Populating Vetex-Buffer Object (VBO) ###
+#### Creating and Populating Vetex-Buffer Object (VBO) ####
 
 All data should be stored in buffer objects before drawing. Drawing means transfering the vertex data to OpenGL server.
  
@@ -107,16 +204,78 @@ We need to set up data in a VBO associated with current VAO. With parameter *tar
 
 *glBufferData* populates current VBO with parameter *data*.
 
-### Compiling and Linking with Shaders ###
+#### Compiling and Linking with Shaders ####
 
 We grouped all functions relating to shaders into a function *compileShaders*. In it, we call *loadShaders* to load two shader files (vs.glsl and fs.glsl), compile them, attach them
  to a shaper *program*, link the program, and use the program. Until then, these shaders has connection with the OpenGL application.
 
-### Feeding data to Shaders ###
+Although the whole process of compiling and linking is critical for shading programming, at this time, we'd rather take it as a black box to make learning easier.
 
-The communication between OpenGL applications and shaders behaves little bit like calling functions. 
+#### Feeding data to Shaders ####
 
-## What We Do in *display* Routine ##
+Vertex shaders and fragment shaders are both required for shading in OpenGL version 3.1 or greater.
+
+In Triangle project, *vs.glsl* is the vertex shader and *fs.glsl* is the fragment shader.
+
+Look at *vs.glsl* first.
+
+    #version 430 core
+
+    layout (location = 0) in vec4 vPosition;
+
+    void main() {
+	    gl_Position = vPosition;
+    }
+
+*gl_Position* is a special shader variable provided by OpenGL used to transfer vertex data to GPU. Each time
+ OpenGL needs vertex data, it will execute vertex shader and fetch it from *gl_Position*. All we need is only
+ assigning this varialbe with what we want.
+
+In previous code, we assigned the value of *vPosition* to *gl_Position*.
+
+*vPosition* is a global variable we declared in shader to receive the data from buffer data of type *vec4*.
+ We might have serval such variables, and all of them has a location starting from 0.
+
+Up till now, the issue remains how to feed vertex data from buffer to *vPosition* in shader. We do it via
+ *glVertexAttribPointer*.
+
+    void glVertexAttribPointer(	GLuint index,
+ 	    GLint size,
+ 	    GLenum type,
+ 	    GLboolean normalized,
+ 	    GLsizei stride,
+ 	    const GLvoid * pointer)
+
+We just set up a VBO and populates it with some data. Parameter *index* decides to which vertex shading variable
+ we want to feed with the data in current VBO, identified with shader variable's location just mentioned. And the rest
+ parameters of *glVertexAttribPointer* are to tell OpenGL how to set the pointer correctly each time it needs
+ vertex data from VBO.
+
+As a programmer, we do not actually transfer the data from buffer to shader. Rather, we define a pointer pointing to the
+ buffer data, and each time, when the OpenGL needs a vertex data, it will fetch data based on this pointer and then move the pointer
+ foreaward in background. This is why the function name consists of "Pointer". 
+
+Yet it is not obvious now what "vertex attrib" means, in a VBO that only consists of all data of vertex location as above.
+
+In some vertex arrays, if we need, we can store both location and color information in it as following:
+
+    GLfloat vertex_info[] = {
+        -1.0f, -1.0f,        // first vertex location
+         1.0f,  0.0f,  0.0f  // first vertex color
+
+         1.0f, -1.0f,        // second vertex location
+         1.0f,  0.0f,  0.0f  // second vertex color
+
+        -1.0f,  1.0f,        // third vertex location
+         1.0f,  0.0f,  0.0f  // thord vertex color
+    }
+
+*vertex_info* has 3 pairs of vertex information, each pair consists of location and color. We say we have 2 vertex attributes
+ in it.
+
+
+
+### What We Do in *display* Routine ###
 
 
 
