@@ -29,6 +29,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imgs", "imgs", "{E8F2A4E8-B
 		Docs\VisualStudio\imgs\VS_OpenGL_Projs_Include_Dir.png = Docs\VisualStudio\imgs\VS_OpenGL_Projs_Include_Dir.png
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestField", "TestField\TestField.vcxproj", "{5CA5D2E7-7C1F-4579-B48C-7736D84FEFA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chap_03", "Chap_03", "{DCAACDBD-F530-4D8E-99A0-5916DD436EC6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DrawCommands", "Chap_03\DrawCommands\DrawCommands.vcxproj", "{78BD8D49-A80E-4A5A-821B-15E6FB724511}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -43,6 +49,14 @@ Global
 		{227F892E-4D13-42C2-8DB8-C73AC017C482}.Debug|Win32.Build.0 = Debug|Win32
 		{227F892E-4D13-42C2-8DB8-C73AC017C482}.Release|Win32.ActiveCfg = Release|Win32
 		{227F892E-4D13-42C2-8DB8-C73AC017C482}.Release|Win32.Build.0 = Release|Win32
+		{5CA5D2E7-7C1F-4579-B48C-7736D84FEFA0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5CA5D2E7-7C1F-4579-B48C-7736D84FEFA0}.Debug|Win32.Build.0 = Debug|Win32
+		{5CA5D2E7-7C1F-4579-B48C-7736D84FEFA0}.Release|Win32.ActiveCfg = Release|Win32
+		{5CA5D2E7-7C1F-4579-B48C-7736D84FEFA0}.Release|Win32.Build.0 = Release|Win32
+		{78BD8D49-A80E-4A5A-821B-15E6FB724511}.Debug|Win32.ActiveCfg = Debug|Win32
+		{78BD8D49-A80E-4A5A-821B-15E6FB724511}.Debug|Win32.Build.0 = Debug|Win32
+		{78BD8D49-A80E-4A5A-821B-15E6FB724511}.Release|Win32.ActiveCfg = Release|Win32
+		{78BD8D49-A80E-4A5A-821B-15E6FB724511}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +66,6 @@ Global
 		{8A4C29D7-EE74-4C19-9AAF-B63B14873CB1} = {904EEB25-1C33-4AE7-80FB-2078C2E9418E}
 		{227F892E-4D13-42C2-8DB8-C73AC017C482} = {D95043DA-03EC-4E52-BA19-18C1A539B59A}
 		{E8F2A4E8-BBD1-475E-9851-C039B6FEEB73} = {105C81DF-2297-4B8B-9554-180081CE9F68}
+		{78BD8D49-A80E-4A5A-821B-15E6FB724511} = {DCAACDBD-F530-4D8E-99A0-5916DD436EC6}
 	EndGlobalSection
 EndGlobal
