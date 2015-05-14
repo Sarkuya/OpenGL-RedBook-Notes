@@ -33,6 +33,7 @@ void init(void) {
 	glGenVertexArrays(1, VAOs);
 	glBindVertexArray(VAOs[0]);
 
+	
 	GLfloat vertex_info[] = {
 		-1.0f, -1.0f,         // first vertex location
 		 1.0f,  0.0f,  0.0f,  // first vertex color
@@ -40,9 +41,23 @@ void init(void) {
 		 1.0f, -1.0f,         // second vertex location
 		 0.0f,  1.0f,  0.0f,  // second vertex color
 
-		-1.0f,  1.0f,         // third vertex location
+		 0.0f,  1.0f,         // third vertex location
 		 0.0f,  0.0f,  1.0f   // third vertex color
 	};
+	
+
+	/*
+	GLfloat vertex_info[] = {
+		-1.0f, -1.0f,  0.0f,  // first vertex position
+		 1.0f,  // first vertex color
+
+		 1.0f, -1.0f,  0.0f,  // second vertex position
+		 0.0f,  // second vertex color
+
+		 0.0f,  1.0f,  0.0f,  // third vertex position
+		 0.0f   // third vertex color
+	};
+	*/
 
 	glGenBuffers(1, Buffers);
 	glBindBuffer(GL_ARRAY_BUFFER, Buffers[0]);
@@ -50,11 +65,11 @@ void init(void) {
 
 	compileShaders();
 
-	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 3, BUFFER_OFFSET(0));  // position
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 2, BUFFER_OFFSET(5));  // color
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 5, BUFFER_OFFSET(0));  // position
+	//glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 2, BUFFER_OFFSET(5));  // color
 
 	glEnableVertexAttribArray(0);
-	glEnableVertexAttribArray(1);
+	//glEnableVertexAttribArray(1);
 
 	glClearColor(1, 1, 1, 1);
 }
@@ -93,6 +108,8 @@ int main(int argc, char** argv) {
 	}
 
 	init();
+
+	cout << sizeof(GL_FLOAT) << endl;
 
 	glutDisplayFunc(display);
 	glutMainLoop();
