@@ -278,7 +278,7 @@ In some vertex arrays, if we need, we can store both vertex position and vetex c
 The vertex position and color are stored alternately in buffer memory. In such circumstance, we can define 2 vertex attribute pointers pointing to position
  and color respectively. Here is how:
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 5, BUFFER_OFFSET(0));                     // position
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 5, BUFFER_OFFSET(0));                     // position
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 5, BUFFER_OFFSET(sizeof(GL_FLOAT) * 2));  // color
 
 The code sizeof(GL\_FLOAT) \* 5 means every other 5 GL\_FLOAT, there would be a position and color vertex attribute. And the color attributes begins after 2 GL_FLOAT.
@@ -295,12 +295,77 @@ And the code for *fs.glsl*:
 
 We assign a blue color to every vertex by using the *out* variable *fColor*.
 
-
-
 After setting up the pointer, we need to enable the pointer by using *glEnableVertexAttribArray*.
 
 ### What We Do in *display* Routine ###
 
+Compared with *init* routine, codes in *display* routine are very simple.
+
+We can take each VAO as an index of buffer memory that has been allocated previously. When
+ we need to use one of such buffer memory, we rebind a certain VAO to current VAO using *glBlindVertexArray* again,
+ then the whole memory block under that VAO is available for OpenGL to be used to render images.
+
+    void glDrawArrays(	GLenum mode,
+ 	    GLint first,
+ 	    GLsizei count)
+
+*glDrawArrays* renders primitives using the array data from current VBO under current VAO. It uses *count* sequential __elements__,
+ starting from *first* element, from each enabled array, to construct a sequence of primitives of type *mode*.
+
+What does an **element** mean? Thinking of the vertex array below:
+
+	GLfloat vertices[6][2] = {
+		{ -0.90, -0.90 },  // Triangle 1
+		{  0.85, -0.90 },
+		{ -0.90,  0.85 },
+		{  0.90, -0.85 },  // Triangle 2
+		{  0.90,  0.90 },
+		{ -0.85,  0.90 },
+	};
+
+There are altogether 6 vertices, each vertex consists of a pair of {x, y} corordinate. Then each element in it is listed below:
+
+1. {-0.90, -0.90}
+2. { 0.85, -0.90}
+3. {-0.90,  0.85}
+4. { 0.90, -0.85}
+5. { 0.90,  0.90}
+6. {-0.85,  0.90}
+
+In this case, a vertex comprised of two components is a element. Then, we can easily figure out the role of each *glDrawArrays* below:
+
+    glDrawArrays(GL_TRIANGLES, 0, 3)  // taking 3 elements, starting from the first element, to construct 1 triangle
+    glDrawArrays(GL_TRIANGLES, 3, 3)  // taking 3 elements, starting from the third element, to construct 1 triangle
+    glDrawArrays(GL_TRIANGLES, 0, 6)  // taking 6 elements, starting from the first element, to construct 2 triangles
+
+And as for:
+
+	GLfloat vertex_info[] = {
+		-1.0f, -1.0f,         // first vertex position
+		 1.0f,  0.0f,  0.0f,  // first vertex color
+
+		 1.0f, -1.0f,         // second vertex position
+		 0.0f,  1.0f,  0.0f,  // second vertex color
+
+		 0.0f,  1.0f,         // third vertex position
+		 0.0f,  0.0f,  1.0f   // third vertex color
+	};
+
+There would be 2 enabled vertex attribute arrays. When constructing each element, OpenGL would fetch data from the position attribue array
+ and color attribue array simutaneiously as below:
+
+         pos_attrib         color_attrib
+    1. {-1.0f, -1.0f}    {1.0f, 0.0f, 0.0f}
+    2. { 1.0f, -1.0f}    {0.0f, 1.0f, 0.0f}
+    3. { 0.0f,  1.0f}    {0.0f, 0.0f, 1.0f}
+
+That is, each element consists of both of position attribute and color attribute.
+
+So, when we invoke
+
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+
+OpenGL will fetch 3 elments, starting from the first element, to construct a colored triangle.
 
 
 ## Key Functions in Triangles Project ##
@@ -310,8 +375,48 @@ After setting up the pointer, we need to enable the pointer by using *glEnableVe
 * *glVertexAttribPointer*
 * *glDrawArrays*
 
+## Exercises ##
 
+1.  Using the vertex_info data structure above, draw a colored triangle.
 
+    **Hints**: Almost all necessary steps are mentioned above, except shaders. And here is the shaders for it:
+
+    **vs.glsl**:
+
+        #version 430 core
+
+        layout (location = 0) in vec4 vPosition;
+        layout (location = 1) in vec4 vColor;
+
+        out vec4 fs_color;
+
+        void main() {
+	        gl_Position = vPosition;
+	        fs_color = vColor;
+        }
+
+    **fs.glsl**:
+
+        #version 430 core
+
+        in vec4 fs_color;
+
+        layout (location = 0) out vec4 color;
+
+        void main() {
+	        color = fs_color;
+        }
+
+    The key point here is that we convey vertex position and vertex color from application to vertex shader, and by using
+     the *in* and *out* variables in *vs.glsl* and *fs.glsl*, the OpenGL conveys vertex color from *vs.glsl* to *fs.glsl*.
+
+2.  We combined both vertex position and veretex color in a array in veretex_info, and copy them to a VBO in a bundle.
+     What approaches else can we take?
+
+    Can we use 2 arrays to define vertex position and vertex color separately, and copy both of them to
+     a sole VBO?
+
+    Or even, after defining in 2 arrays, copy them separately to 2 VBOs? If so, how to use these 2 VBOs?
 
 
 ## References ##

@@ -11,8 +11,6 @@ const int WINDOW_HEIGHT = 500;
 GLuint    VAOs[1];
 GLuint Buffers[1];
 
-const GLuint NumVertices = 6;
-
 void centerWindow() {
 	glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 	glutInitWindowPosition((glutGet(GLUT_SCREEN_WIDTH) - WINDOW_WIDTH) / 2, (glutGet(GLUT_SCREEN_HEIGHT) - WINDOW_HEIGHT) / 2);
@@ -33,7 +31,6 @@ void init(void) {
 	glGenVertexArrays(1, VAOs);
 	glBindVertexArray(VAOs[0]);
 
-	
 	GLfloat vertex_info[] = {
 		-1.0f, -1.0f,         // first vertex position
 		 1.0f,  0.0f,  0.0f,  // first vertex color
@@ -51,7 +48,7 @@ void init(void) {
 
 	compileShaders();
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 5, BUFFER_OFFSET(0));                     // position
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 5, BUFFER_OFFSET(0));                     // position
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 5, BUFFER_OFFSET(sizeof(GL_FLOAT) * 2));  // color
 
 	glEnableVertexAttribArray(0);
@@ -94,8 +91,6 @@ int main(int argc, char** argv) {
 	}
 
 	init();
-
-	cout << sizeof(GL_FLOAT) << endl;
 
 	glutDisplayFunc(display);
 	glutMainLoop();
