@@ -295,6 +295,8 @@ And the code for *fs.glsl*:
 
 We assign a blue color to every vertex by using the *out* variable *fColor*.
 
+As you have seen, vertex shading determines the primivtive's position, and fragment shading determines the primitive's color.
+
 After setting up the pointer, we need to enable the pointer by using *glEnableVertexAttribArray*.
 
 ### What We Do in *display* Routine ###
@@ -367,6 +369,8 @@ So, when we invoke
 
 OpenGL will fetch 3 elments, starting from the first element, to construct a colored triangle.
 
+Finally, *glFlush* flushes the previously issued commands in buffers to be executed by OpenGL server.
+ It does **not** wait until the execution and return immediately.
 
 ## Key Functions in Triangles Project ##
 
@@ -377,7 +381,7 @@ OpenGL will fetch 3 elments, starting from the first element, to construct a col
 
 ## Exercises ##
 
-1.  Using the vertex_info data structure above, draw a colored triangle.
+1.  Using the vertex_info data structure above, draw a triangle with 3 colored vertex.
 
     **Hints**: Almost all necessary steps are mentioned above, except shaders. And here is the shaders for it:
 

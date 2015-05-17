@@ -1,0 +1,33 @@
+# DocBook #
+
+
+
+## DocBook in Cygwin ##
+
+When setup DocBook in Cygwin, Cygwin will have a file *docbook* in *%CYGWIN_HOME%/etc/xml* directory.
+ It maps 
+
+    http://docbook.sourceforge.net/release/xsl/current
+
+ and
+
+    http://docbook.sourceforge.net/release/xsl/current
+
+ to
+
+    file:///usr/share/sgml/docbook/xsl-stylesheets
+
+ which means:
+
+1. The docbook-xsl is installed in the directoy %CYGWIN_HOME%/usr/share/sgml/docbook/xsl-stylesheets.
+2. The URLs above will be redirected to this directory.
+
+And also, a file *catalog* will installed in *%CYGWIN_HOME%/etc/xml* directory if we choose to install docbook catalog via cygwin.
+ It maps all relating uris to "*file:///etc/xml/docbook*".
+
+## Todo: About automatic works by using Makefile ##
+
+## References ##
+
+1. Documention with DocBook on Win32: <http://www.codeproject.com/Articles/4481/Documention-with-DocBook-on-Win32>
+
