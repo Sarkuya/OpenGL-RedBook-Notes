@@ -1,0 +1,67 @@
+html {  
+    background: -webkit-gradient(linear, left top, left bottom, from(#00abeb), to(#fff));  
+}  
+  
+body {  
+    background-color: #333;  
+    margin: 1em;  
+    padding: 1em;  
+    -webkit-border-radius: 6px;  
+    -webkit-box-shadow: 0 0 14px #123;  
+}  
+  
+h1.title {  
+    color: #cb6c8a;  
+}  
+  
+h2.title {  
+    color: #cb6c8a;  
+}  
+  
+div.section h2.title {  
+    color: #82a4bb;  
+}  
+  
+p {  
+    color: #bfbbaf;  
+    text-indent: 2em;  
+}  
+  
+a:link {  
+    color: #7a8a39;  
+}  
+  
+a:hover {  
+    color: palegreen;  
+}  
+  
+body div.titlepage h1.title {  
+    text-align: center;  
+}  
+  
+div.chapter {  
+    margin-top: 5em;  
+}  
+  
+div.chapter h2.title {  
+    border-bottom: 1px solid grey;  
+}  
+  
+div.section h2.title {  
+    border-bottom-width: 0;  
+}  
+  
+div.toc p {  
+    text-indent: 0;  
+    color: #ccc;  
+}  
+  
+div.toc {  
+    border: 1px dashed gray;  
+    padding: 0.5em;  
+    margin-left: 2em;  
+}  
+  
+div.toc dl dd dl {  
+    margin-top: 0px;  
+}

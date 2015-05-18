@@ -42,11 +42,24 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DocBook", "DocBook", "{69C0FFF8-4774-4EAC-AE53-87A59B9D776F}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\DocBook\DocBook.mkd = Docs\DocBook\DocBook.mkd
+		Docs\DocBook\GenHTML.sh = Docs\DocBook\GenHTML.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{5608F2D5-5AC9-425E-B306-601A7C9F043B}"
 	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\Content\chapter1.xml = Docs\DocBook\Content\chapter1.xml
+		Docs\DocBook\Content\chapter2.xml = Docs\DocBook\Content\chapter2.xml
 		Docs\DocBook\Content\SampleBook.xml = Docs\DocBook\Content\SampleBook.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XSL", "XSL", "{CB230DB2-2C80-4AA3-9109-80CD2EA3574D}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\XSL\html.xsl = Docs\DocBook\XSL\html.xsl
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSS", "CSS", "{BBC15DD6-B825-4BDF-AAF1-ADB075BEEEB8}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\CSS\style.css = Docs\DocBook\CSS\style.css
 	EndProjectSection
 EndProject
 Global
@@ -89,5 +102,7 @@ Global
 		{4D61D8B2-EC8A-4182-8B2A-9CDA485B2BC6} = {8D966E4F-99B8-4E7D-A302-4A5AEA1B534A}
 		{69C0FFF8-4774-4EAC-AE53-87A59B9D776F} = {904EEB25-1C33-4AE7-80FB-2078C2E9418E}
 		{5608F2D5-5AC9-425E-B306-601A7C9F043B} = {69C0FFF8-4774-4EAC-AE53-87A59B9D776F}
+		{CB230DB2-2C80-4AA3-9109-80CD2EA3574D} = {69C0FFF8-4774-4EAC-AE53-87A59B9D776F}
+		{BBC15DD6-B825-4BDF-AAF1-ADB075BEEEB8} = {69C0FFF8-4774-4EAC-AE53-87A59B9D776F}
 	EndGlobalSection
 EndGlobal

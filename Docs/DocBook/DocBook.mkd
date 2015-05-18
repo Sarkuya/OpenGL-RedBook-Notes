@@ -114,6 +114,30 @@ Since DocBook V5.0 doesn't need DTD, we can ommit DTD declaration, and specify i
 
     xsltproc --output Dist/SampleBook.html docbook.xsl Content/SampleBook.xml
 
+### Tips for Creating Shell Script ###
+ 
+Line endings are different in Unix and Windows. In order to create a shell script that executed in Cygwin shell and edit in Visual Studio, here's how:
+
+1.  Turn off the line ending detecting in Visual Studio.
+
+    TOOLS -> Options -> Environment -> Documents, **uncheck** the checkbox "Check for consistent line endings on load".
+
+2.  In Cygwin shell terminal, type:
+
+        cat >> GenHTML.sh
+    
+    This will copy the what you are typing to GenHTMl.sh.
+
+3.  Type
+
+        Ctrl + D
+
+    to end the typing and close the file.
+
+4. Drag GenHTML.sh to Visual Studio to edit.
+
+Since we create the file in Cygwin shell, it's line endings would be Unix. And since we have disabled the auto-converting function in Visual Studio,
+ it would remain the Unix format while being edited and save in Visual Studio.
 
 ## Todo: About automatic works by using Makefile ##
 

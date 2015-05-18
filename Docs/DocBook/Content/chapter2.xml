@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook">
+  <title>HTML标签</title>
+  <para>HTML标签分为很多种。</para>
+  <section>
+    <title>链接</title>
+    <para>
+      HTML的链接标签是&lt;a&gt;。</para>
+  </section>
+  <section>
+    <title>表格</title>
+    <para>
+      HTML的表格标签是&lt;table&gt;。</para>
+  </section>
+</chapter>

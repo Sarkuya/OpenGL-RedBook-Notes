@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<chapter xmlns="http://docbook.org/ns/docbook">
+  <title>HTML概述</title>
+  <para>本章简要地讲述了HTML的概况。</para>
+  <section>
+    <title>何为HTML</title>
+    <para>HTML是一个超文本标记语言。</para>
+  </section>
+  <section>
+    <title>HTML的重要性</title>
+    <para>如何评估HTML的重要性都不为过。</para>
+  </section>
+</chapter>
