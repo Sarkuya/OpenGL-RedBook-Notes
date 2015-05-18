@@ -44,6 +44,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DocBook", "DocBook", "{69C0
 		Docs\DocBook\DocBook.mkd = Docs\DocBook\DocBook.mkd
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{5608F2D5-5AC9-425E-B306-601A7C9F043B}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\Content\SampleBook.xml = Docs\DocBook\Content\SampleBook.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -83,5 +88,6 @@ Global
 		{8D966E4F-99B8-4E7D-A302-4A5AEA1B534A} = {D95043DA-03EC-4E52-BA19-18C1A539B59A}
 		{4D61D8B2-EC8A-4182-8B2A-9CDA485B2BC6} = {8D966E4F-99B8-4E7D-A302-4A5AEA1B534A}
 		{69C0FFF8-4774-4EAC-AE53-87A59B9D776F} = {904EEB25-1C33-4AE7-80FB-2078C2E9418E}
+		{5608F2D5-5AC9-425E-B306-601A7C9F043B} = {69C0FFF8-4774-4EAC-AE53-87A59B9D776F}
 	EndGlobalSection
 EndGlobal

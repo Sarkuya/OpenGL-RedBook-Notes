@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="zh_cn">
+  <title>HTML记要</title>
+  <dedication>
+    <para>谨以本书献给学习HTML的读者。</para>
+  </dedication>
+  <chapter>
+    <title>HTML概述</title>
+    <para>本章简要地讲述了HTML的概况。</para>
+    <section>
+      <title>何为HTML</title>
+      <para>HTML是一个超文本标记语言。</para>
+    </section>
+    <section>
+      <title>HTML的重要性</title>
+      <para>如何评估HTML的重要性都不为过。</para>
+    </section>
+  </chapter>
+  <chapter>
+    <title>HTML标签</title>
+    <para>HTML标签分为很多种。</para>
+    <section>
+      <title>链接</title>
+      <para>
+        HTML的链接标签是&lt;a&gt;。
+      </para>
+    </section>
+    <section>
+      <title>表格</title>
+      <para>
+        HTML的链接标签是&lt;table&gt;。
+      </para>
+    </section>
+  </chapter>
+</book>

@@ -1,0 +1,1 @@
+xsltproc --output Dist/SampleBook.html docbook.xsl Content/SampleBook.xml
