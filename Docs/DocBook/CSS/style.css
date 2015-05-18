@@ -27,7 +27,7 @@ p {
     text-indent: 2em;  
 }  
   
-a:link {  
+a:link, a:visited {  
     color: #7a8a39;  
 }  
   
@@ -64,4 +64,14 @@ div.toc {
   
 div.toc dl dd dl {  
     margin-top: 0px;  
+}
+
+div.navheader table th, div.navfooter table td {
+    color: #bfbbaf;
+}
+
+div.note table {
+    color: #999;
+    border: 1px solid gray;
+    width: 100%;
 }
