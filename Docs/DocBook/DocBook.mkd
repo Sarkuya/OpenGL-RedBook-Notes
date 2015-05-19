@@ -1,8 +1,6 @@
-# DocBook #
+# Setting up DocBook in Cygwin #
 
-
-
-## DocBook in Cygwin ##
+## Cygwin's DocBook Structure ##
 
 When setup DocBook in Cygwin, Cygwin will have a file *docbook* in *%CYGWIN_HOME%/etc/xml* directory.
  It maps 
@@ -26,14 +24,20 @@ And also, a file *catalog* will installed in *%CYGWIN_HOME%/etc/xml* directory i
  It maps all relating URIs to "*file:///etc/xml/docbook*".
 
 Note that *%CYGWIN_HOME%/etc/xml* is the default path that *XML_CATALOG_FILES* will points to when using *xsltproc*.
- That means, *xsltproc* first locate *catalog* in this directory, and in this file, it redirects all to "*file:///etc/xml/docbook*", which is a catalog file.
- So, when we modify the catalog file, we should first modify "*file:///etc/xml/docbook*" and then "*file:///etc/xml/docbook*".
+ That means, *xsltproc* first locate *catalog* in this directory, and in this file, it redirects all to "*file:///etc/xml/docbook*", which is also a catalog file.
+ So, when we modify the catalog file, we should first modify "*file:///etc/xml/catalog*" and then "*file:///etc/xml/docbook*".
 
 sgml-iso-entities and xml-iso-entities are installed in *%CYGWIN_HOME%/usr/share/sgml*. 
 
+## System Level Setting up ##
+
+The setting ups in this section are done in *%CYGWIN_HOME%* directory.
+
+### FOP ###
+
 There is no fop in Cygwin, so you will have to download it yourself. Unzip it to the folder:
 
-    /usr/share/sgml/docbook/fop-1.1
+    %CYGWIN_HOME%/usr/share/sgml/docbook/fop-1.1
 
 There is a file *fop.xconf* in *%FOP_HOME/conf%* directory. Edit after backup.
 
@@ -49,7 +53,11 @@ There is a file *fop.xconf* in *%FOP_HOME/conf%* directory. Edit after backup.
         ......  
     </renderers>
 
-## catalog ##
+This will auto search for all fonts installed and then these fonts will be available. 
+
+### catalog ###
+
+File name: *%CYGWIN_HOME%/etc/xml/catalog*
 
     <?xml version="1.0"?>
     <!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN" "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
@@ -67,7 +75,9 @@ There is a file *fop.xconf* in *%FOP_HOME/conf%* directory. Edit after backup.
       <delegateURI uriStartString="fop.xsl" catalog="file:///etc/xml/docbook"/>
     </catalog>
 
-## docbook ##
+### docbook ###
+
+File name: *%CYGWIN_HOME%/etc/xml/docbook*
 
     <?xml version="1.0" encoding="UTF-8"?>
 
@@ -87,50 +97,305 @@ There is a file *fop.xconf* in *%FOP_HOME/conf%* directory. Edit after backup.
 
     </catalog>
 
-## DocBook xml Document ##
+## DocBook Documents ##
+
+Now turn to the specific docbook documents. These files are assets that will be used to create your docbook documents.
+ I group them in a top level directory named *DocBook*. The following lists all files in this directory:
+
+* DocBook
+    * Content
+        * chapter1.xml
+        * chapter2.xml
+        * SampleBook.xml
+    * CSS
+        * style.css
+    * XSL
+        * chunk.xsl
+        * html.xsl
+        * pdf.xsl
+        * sharedparts.xsl
+        * sharedparts_html.xsl
+    * GenHTML.sh
+    * GenPDF.sh
+
+### DocBook XML Documents ###
 
 Since DocBook V5.0 doesn't need DTD, we can ommit DTD declaration, and specify its version in the root element.
 
+#### SampleBook.xml ####
+
     <?xml version="1.0" encoding="UTF-8"?>
 
-    <book xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="zh_cn">
+    <book xmlns="http://docbook.org/ns/docbook"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          version="5.0"
+          xml:lang="zh_cn">
+  
       <title>HTML记要</title>
+  
       <dedication>
         <para>谨以本书献给学习HTML的读者。</para>
       </dedication>
-      <chapter>
-        <title>HTML概述</title>
-        <para>本章简要地讲述了HTML的概况。</para>
-        <section>
-          <title>何为HTML</title>
-          <para>HTML是一个超文本标记语言。</para>
-        </section>
-        <section>
-          <title>HTML的重要性</title>
-          <para>如何评估HTML的重要性都不为过。</para>
-        </section>
-      </chapter>
-      <chapter>
-        <title>HTML标签</title>
-        <para>HTML标签分为很多种。</para>
-        <section>
-          <title>链接</title>
-          <para>
-            HTML的链接标签是&lt;a&gt;。
-          </para>
-        </section>
-        <section>
-          <title>表格</title>
-          <para>
-            HTML的链接标签是&lt;table&gt;。
-          </para>
-        </section>
-      </chapter>
+  
+      <xi:include href="chapter1.xml" />
+      <xi:include href="chapter2.xml" />
     </book>
 
-## GenHTML.sh ##
+#### chapter1.xml ####
 
-    xsltproc --output Dist/SampleBook.html docbook.xsl Content/SampleBook.xml
+    <?xml version="1.0" encoding="utf-8"?>
+
+    <chapter xmlns="http://docbook.org/ns/docbook">
+      <title>HTML概述</title>
+      <para>本章简要地讲述了HTML的概况。</para>
+      <section>
+        <title>何为HTML</title>
+        <para>HTML是一个超文本标记语言。</para>
+      </section>
+      <section>
+        <title>HTML的重要性</title>
+        <para>如何评估HTML的重要性都不为过。</para>
+        <note>当然是往高评估。</note>
+      </section>
+    </chapter>
+
+#### chapter2.xml ####
+
+    <?xml version="1.0" encoding="utf-8"?>
+
+    <chapter xmlns="http://docbook.org/ns/docbook">
+      <title>HTML标签</title>
+      <para>HTML标签分为很多种。</para>
+      <section>
+        <title>链接</title>
+        <para>
+          HTML的链接标签是&lt;a&gt;。</para>
+      </section>
+      <section>
+        <title>表格</title>
+        <para>
+          HTML的表格标签是&lt;table&gt;。</para>
+      </section>
+    </chapter>
+
+### CSS File ###
+
+#### style.css ####
+
+    html {  
+        background: -webkit-gradient(linear, left top, left bottom, from(#00abeb), to(#fff));  
+    }  
+  
+    body {  
+        background-color: #333;  
+        margin: 1em;  
+        padding: 1em;  
+        -webkit-border-radius: 6px;  
+        -webkit-box-shadow: 0 0 14px #123;  
+    }  
+  
+    h1.title {  
+        color: #cb6c8a;  
+    }  
+  
+    h2.title {  
+        color: #cb6c8a;  
+    }  
+  
+    div.section h2.title {  
+        color: #82a4bb;  
+    }  
+  
+    p {  
+        color: #bfbbaf;  
+        text-indent: 2em;  
+    }  
+  
+    a:link, a:visited {  
+        color: #7a8a39;  
+    }  
+  
+    a:hover {  
+        color: palegreen;  
+    }  
+  
+    body div.titlepage h1.title {  
+        text-align: center;  
+    }  
+  
+    div.chapter {  
+        margin-top: 5em;  
+    }  
+  
+    div.chapter h2.title {  
+        border-bottom: 1px solid grey;  
+    }  
+  
+    div.section h2.title {  
+        border-bottom-width: 0;  
+    }  
+  
+    div.toc p {  
+        text-indent: 0;  
+        color: #ccc;  
+    }  
+  
+    div.toc {  
+        border: 1px dashed gray;  
+        padding: 0.5em;  
+        margin-left: 2em;  
+    }  
+  
+    div.toc dl dd dl {  
+        margin-top: 0px;  
+    }
+
+    div.navheader table th, div.navfooter table td {
+        color: #bfbbaf;
+    }
+
+    div.note table {
+        color: #999;
+        border: 1px solid gray;
+        width: 100%;
+    }
+
+### XSL Files ###
+
+#### chunk.xsl ####
+
+    <?xml version="1.0" encoding="utf-8"?>
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+      <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/html/chunk.xsl" />
+
+      <xsl:include href="sharedparts_html.xsl" />
+  
+      <xsl:param name="chunker.output.encoding" select="'UTF-8'" />
+      <xsl:param name="chunker.output.indent" select="'yes'" />
+
+      <xsl:param name="navig.graphics" select="1" />
+      <xsl:param name="navig.graphics.path" select="'images/docbook/'" />
+
+    </xsl:stylesheet>
+
+#### html.xsl ####
+
+    <?xml version="1.0" encoding="utf-8"?>
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+      <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl" />
+
+      <xsl:include href="sharedparts_html.xsl" />
+
+      <xsl:output method="html" encoding="UTF-8" indent="yes" />
+    </xsl:stylesheet>
+
+#### pdf.xsl ####
+
+    <?xml version="1.0" encoding="utf-8"?>
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                    xml:fo="http://www.w3.org/1999/XSL/Format"
+                    version="1.0">
+  
+      <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/fo/docbook.xsl" />
+
+      <xsl:include href="sharedparts.xsl" />
+
+      <xsl:param name="title.font.family">SimHei</xsl:param>
+      <xsl:param name="body.font.family">SimSun</xsl:param>
+
+      <xsl:param name="admon.graphics.path">Dist/pdf/images/docbook/</xsl:param>
+
+      <xsl:param name="local.l10n.xml" select="document('')"/>
+      <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
+        <l:l10n language="zh_cn">
+          <l:context name="title-numbered">
+            <l:template name="chapter" text="第 %n 章 %t"/>
+            <l:template name="section" text="%n %t"/>
+          </l:context>
+        </l:l10n>
+      </l:i18n>
+    </xsl:stylesheet>
+
+#### sharedparts.xsl ####
+
+    <?xml version="1.0" encoding="utf-8"?>
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+      <xsl:param name="toc.section.depth">2</xsl:param>
+
+      <xsl:param name="section.autolabel">1</xsl:param>
+      <xsl:param name="section.label.includes.component.label">1</xsl:param>
+
+      <xsl:param name="admon.graphics">1</xsl:param>
+      <xsl:param name="admon.graphics.extension">.png</xsl:param>
+      <xsl:param name="admon.textlabel">1</xsl:param>
+    </xsl:stylesheet>
+
+#### sharedparts_html.xsl ####
+
+    <?xml version="1.0" encoding="utf-8"?>
+
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+      <xsl:include href="sharedparts.xsl" />
+
+      <xsl:param name="html.stylesheet">css/style.css</xsl:param>
+      <xsl:param name="admon.graphics.path">images/docbook/</xsl:param>
+    </xsl:stylesheet>
+
+### bin bash Files ###
+
+These file are bin bash files to be run under **Cygwin terminal**.
+
+#### GenHTML.sh ####
+
+    export DOCBOOK_XSL_DIR="/usr/share/sgml/docbook/xsl-stylesheets"
+
+    rm -r Dist
+
+    mkdir -p Dist/html/chunk/css
+    mkdir -p Dist/html/chunk/images/custom
+    mkdir -p Dist/html/chunk/images/docbook
+
+    mkdir -p Dist/html/single/css
+    mkdir -p Dist/html/single/images/custom
+    mkdir -p Dist/html/single/images/docbook
+
+    mkdir -p Dist/pdf/images/custom
+    mkdir -p Dist/pdf/images/docbook
+
+    cp -r CSS/* Dist/html/chunk/css
+    cp -r CSS/* Dist/html/single/css
+
+    cp -r IMAGES/* Dist/html/chunk/images/custom
+    cp -r $DOCBOOK_XSL_DIR/images/* Dist/html/chunk/images/docbook
+    cp -r IMAGES/* Dist/html/single/images/custom
+    cp -r $DOCBOOK_XSL_DIR/images/* Dist/html/single/images/docbook
+    cp -r IMAGES/* Dist/pdf/images/custom
+    cp -r $DOCBOOK_XSL_DIR/images/* Dist/pdf/images/docbook
+
+    xsltproc --xinclude --output Dist/html/single/SampleBook.html XSL/html.xsl Content/SampleBook.xml
+    xsltproc --xinclude --output Dist/html/chunk/SampleBook.html XSL/chunk.xsl Content/SampleBook.xml
+
+#### GenPDF.sh ####
+
+    export DOCBOOK_DIR="/usr/share/sgml/docbook"
+    export DOCBOOK_XSL_DIR="$DOCBOOK_DIR/xsl-stylesheets"
+    export FOP_DIR="$DOCBOOK_DIR/fop-1.1"
+
+    rm Dist/pdf/*.fo Dist/pdf/*.pdf
+
+    mkdir -p Dist/pdf/images/custom
+    mkdir -p Dist/pdf/images/docbook
+
+    cp -r IMAGES/* Dist/pdf/images/custom
+    cp -r $DOCBOOK_XSL_DIR/images/* Dist/pdf/images/docbook
+
+    xsltproc --xinclude --output Dist/pdf/SampleBook.fo --stringparam fop1.extensions 1 XSL/pdf.xsl Content/SampleBook.xml
+    $FOP_DIR/fop -c C:/cygwin/usr/share/sgml/docbook/fop-1.1/conf/fop.xconf Dist/pdf/SampleBook.fo Dist/pdf/SampleBook.pdf
+
 
 ### Tips for Creating Shell Script ###
  
@@ -156,6 +421,8 @@ Line endings are different in Unix and Windows. In order to create a shell scrip
 
 Since we create the file in Cygwin shell, it's line endings would be Unix. And since we have disabled the auto-converting function in Visual Studio,
  it would remain the Unix format while being edited and save in Visual Studio.
+
+If your are sure that the script are correct while you doesn't get the expected result, try this first.
 
 ## Todo: About automatic works by using Makefile ##
 
