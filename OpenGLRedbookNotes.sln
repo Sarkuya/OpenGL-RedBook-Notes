@@ -43,6 +43,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DocBook", "DocBook", "{69C0
 	ProjectSection(SolutionItems) = preProject
 		Docs\DocBook\DocBook.mkd = Docs\DocBook\DocBook.mkd
 		Docs\DocBook\GenHTML.sh = Docs\DocBook\GenHTML.sh
+		Docs\DocBook\GenPDF.sh = Docs\DocBook\GenPDF.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{5608F2D5-5AC9-425E-B306-601A7C9F043B}"
@@ -56,6 +57,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XSL", "XSL", "{CB230DB2-2C8
 	ProjectSection(SolutionItems) = preProject
 		Docs\DocBook\XSL\chunk.xsl = Docs\DocBook\XSL\chunk.xsl
 		Docs\DocBook\XSL\html.xsl = Docs\DocBook\XSL\html.xsl
+		Docs\DocBook\XSL\pdf.xsl = Docs\DocBook\XSL\pdf.xsl
+		Docs\DocBook\XSL\sharedparts.xsl = Docs\DocBook\XSL\sharedparts.xsl
+		Docs\DocBook\XSL\sharedparts_html.xsl = Docs\DocBook\XSL\sharedparts_html.xsl
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSS", "CSS", "{BBC15DD6-B825-4BDF-AAF1-ADB075BEEEB8}"

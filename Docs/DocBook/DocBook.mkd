@@ -29,11 +29,25 @@ Note that *%CYGWIN_HOME%/etc/xml* is the default path that *XML_CATALOG_FILES* w
  That means, *xsltproc* first locate *catalog* in this directory, and in this file, it redirects all to "*file:///etc/xml/docbook*", which is a catalog file.
  So, when we modify the catalog file, we should first modify "*file:///etc/xml/docbook*" and then "*file:///etc/xml/docbook*".
 
-
-
-
 sgml-iso-entities and xml-iso-entities are installed in *%CYGWIN_HOME%/usr/share/sgml*. 
 
+There is no fop in Cygwin, so you will have to download it yourself. Unzip it to the folder:
+
+    /usr/share/sgml/docbook/fop-1.1
+
+There is a file *fop.xconf* in *%FOP_HOME/conf%* directory. Edit after backup.
+
+    ......  
+    <renderers>  
+        <renderer mime="application/pdf">  
+            ......  
+            <fonts>  
+                ......  
+                <auto-detect/>  
+            </fonts>  
+        </renderer>  
+        ......  
+    </renderers>
 
 ## catalog ##
 
@@ -50,6 +64,7 @@ sgml-iso-entities and xml-iso-entities are installed in *%CYGWIN_HOME%/usr/share
       <delegateURI uriStartString="http://docbook.sourceforge.net/release/xsl/" catalog="file:///etc/xml/docbook"/>
 
       <delegateURI uriStartString="docbook.xsl" catalog="file:///etc/xml/docbook"/>
+      <delegateURI uriStartString="fop.xsl" catalog="file:///etc/xml/docbook"/>
     </catalog>
 
 ## docbook ##
@@ -66,6 +81,9 @@ sgml-iso-entities and xml-iso-entities are installed in *%CYGWIN_HOME%/usr/share
 
       <uri name="docbook.xsl"
             uri="html/docbook.xsl"/>
+
+      <uri name="fop.xsl"
+            uri="fo/docbook.xsl"/>
 
     </catalog>
 
