@@ -14,11 +14,11 @@ All other projects depend on SharedComps. So these projects should have the conf
 
 1.  Add reference to ShapredComps
 
-    ![Projects Dependencies](imgs/VS_OpenGL_Projs_Dependency.png "Projects Dependencies")
+    ![Projects Dependencies](images/VS_OpenGL_Projs_Dependency.png "Projects Dependencies")
 
 2.  Add additional include directories
 
-    ![Include Dir](imgs/VS_OpenGL_Projs_Include_Dir.png "Include Dir")
+    ![Include Dir](images/VS_OpenGL_Projs_Include_Dir.png "Include Dir")
 
 
 

@@ -429,4 +429,5 @@ If your are sure that the script are correct while you doesn't get the expected 
 ## References ##
 
 1. Documention with DocBook on Win32: <http://www.codeproject.com/Articles/4481/Documention-with-DocBook-on-Win32>
+2. Getting started/XML Toolchain and Man Pages, opengl.org: <https://www.opengl.org/wiki/Getting_started/XML_Toolchain_and_Man_Pages>
 

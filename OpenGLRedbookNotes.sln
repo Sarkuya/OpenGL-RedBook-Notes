@@ -5,13 +5,6 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{904EEB25-1C33-4AE7-80FB-2078C2E9418E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VisualStudio", "VisualStudio", "{105C81DF-2297-4B8B-9554-180081CE9F68}"
-	ProjectSection(SolutionItems) = preProject
-		Docs\VisualStudio\VisualStudioHowto.mkd = Docs\VisualStudio\VisualStudioHowto.mkd
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenGL", "OpenGL", "{8A4C29D7-EE74-4C19-9AAF-B63B14873CB1}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github Items", "Github Items", "{66476D74-CC3B-4F62-9D8C-002F76795626}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
@@ -23,12 +16,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chap_01", "Chap_01", "{D950
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Triangles", "Chap_01\Triangles\Triangles.vcxproj", "{227F892E-4D13-42C2-8DB8-C73AC017C482}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imgs", "imgs", "{E8F2A4E8-BBD1-475E-9851-C039B6FEEB73}"
-	ProjectSection(SolutionItems) = preProject
-		Docs\VisualStudio\imgs\VS_OpenGL_Projs_Dependency.png = Docs\VisualStudio\imgs\VS_OpenGL_Projs_Dependency.png
-		Docs\VisualStudio\imgs\VS_OpenGL_Projs_Include_Dir.png = Docs\VisualStudio\imgs\VS_OpenGL_Projs_Include_Dir.png
-	EndProjectSection
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestField", "TestField\TestField.vcxproj", "{5CA5D2E7-7C1F-4579-B48C-7736D84FEFA0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chap_03", "Chap_03", "{DCAACDBD-F530-4D8E-99A0-5916DD436EC6}"
@@ -39,32 +26,51 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercises", "Exercises", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ColoredTriangle", "Chap_01\Exercises\ColoredTriangle\ColoredTriangle.vcxproj", "{4D61D8B2-EC8A-4182-8B2A-9CDA485B2BC6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DocBook", "DocBook", "{69C0FFF8-4774-4EAC-AE53-87A59B9D776F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DocBook", "DocBook", "{36535F29-4C16-454F-AD9B-B4CFF0E22E7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Markdown", "Markdown", "{34542E09-D711-4F2D-AC06-5FAA8E22E13D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VisualStudio", "VisualStudio", "{F8A78D09-6ADA-428A-83AB-CA37F2606BF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Howto", "Howto", "{51DF834F-4F3B-4140-964A-07D3106FE22E}"
 	ProjectSection(SolutionItems) = preProject
-		Docs\DocBook\DocBook.mkd = Docs\DocBook\DocBook.mkd
-		Docs\DocBook\GenHTML.sh = Docs\DocBook\GenHTML.sh
-		Docs\DocBook\GenPDF.sh = Docs\DocBook\GenPDF.sh
+		Docs\Markdown\VisualStudio\Howto\VisualStudioHowto.mkd = Docs\Markdown\VisualStudio\Howto\VisualStudioHowto.mkd
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{5608F2D5-5AC9-425E-B306-601A7C9F043B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{15704DA5-1954-4B0C-A087-D9964EA70773}"
 	ProjectSection(SolutionItems) = preProject
-		Docs\DocBook\Content\chapter1.xml = Docs\DocBook\Content\chapter1.xml
-		Docs\DocBook\Content\chapter2.xml = Docs\DocBook\Content\chapter2.xml
-		Docs\DocBook\Content\SampleBook.xml = Docs\DocBook\Content\SampleBook.xml
+		Docs\Markdown\VisualStudio\Howto\images\VS_OpenGL_Projs_Dependency.png = Docs\Markdown\VisualStudio\Howto\images\VS_OpenGL_Projs_Dependency.png
+		Docs\Markdown\VisualStudio\Howto\images\VS_OpenGL_Projs_Include_Dir.png = Docs\Markdown\VisualStudio\Howto\images\VS_OpenGL_Projs_Include_Dir.png
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XSL", "XSL", "{CB230DB2-2C80-4AA3-9109-80CD2EA3574D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleBook", "SampleBook", "{ABAE47F4-4A7D-4387-9676-D7B8A558EE27}"
 	ProjectSection(SolutionItems) = preProject
-		Docs\DocBook\XSL\chunk.xsl = Docs\DocBook\XSL\chunk.xsl
-		Docs\DocBook\XSL\html.xsl = Docs\DocBook\XSL\html.xsl
-		Docs\DocBook\XSL\pdf.xsl = Docs\DocBook\XSL\pdf.xsl
-		Docs\DocBook\XSL\sharedparts.xsl = Docs\DocBook\XSL\sharedparts.xsl
-		Docs\DocBook\XSL\sharedparts_html.xsl = Docs\DocBook\XSL\sharedparts_html.xsl
+		Docs\DocBook\SampleBook\DocBook.mkd = Docs\DocBook\SampleBook\DocBook.mkd
+		Docs\DocBook\SampleBook\GenHTML.sh = Docs\DocBook\SampleBook\GenHTML.sh
+		Docs\DocBook\SampleBook\GenPDF.sh = Docs\DocBook\SampleBook\GenPDF.sh
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSS", "CSS", "{BBC15DD6-B825-4BDF-AAF1-ADB075BEEEB8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{0598A534-3075-4C31-B4E0-BB7C8257FA97}"
 	ProjectSection(SolutionItems) = preProject
-		Docs\DocBook\CSS\style.css = Docs\DocBook\CSS\style.css
+		Docs\DocBook\SampleBook\Content\chapter1.xml = Docs\DocBook\SampleBook\Content\chapter1.xml
+		Docs\DocBook\SampleBook\Content\chapter2.xml = Docs\DocBook\SampleBook\Content\chapter2.xml
+		Docs\DocBook\SampleBook\Content\SampleBook.xml = Docs\DocBook\SampleBook\Content\SampleBook.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSS", "CSS", "{D8A2789C-933B-450D-A645-86991B4BE817}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\SampleBook\CSS\style.css = Docs\DocBook\SampleBook\CSS\style.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{8F1FF1E3-1E18-46AE-A064-372732529847}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XSL", "XSL", "{21A58A93-28E4-45BC-A16A-22A0AC3219FC}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\SampleBook\XSL\chunk.xsl = Docs\DocBook\SampleBook\XSL\chunk.xsl
+		Docs\DocBook\SampleBook\XSL\html.xsl = Docs\DocBook\SampleBook\XSL\html.xsl
+		Docs\DocBook\SampleBook\XSL\pdf.xsl = Docs\DocBook\SampleBook\XSL\pdf.xsl
+		Docs\DocBook\SampleBook\XSL\sharedparts.xsl = Docs\DocBook\SampleBook\XSL\sharedparts.xsl
+		Docs\DocBook\SampleBook\XSL\sharedparts_html.xsl = Docs\DocBook\SampleBook\XSL\sharedparts_html.xsl
 	EndProjectSection
 EndProject
 Global
@@ -98,16 +104,19 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{105C81DF-2297-4B8B-9554-180081CE9F68} = {904EEB25-1C33-4AE7-80FB-2078C2E9418E}
-		{8A4C29D7-EE74-4C19-9AAF-B63B14873CB1} = {904EEB25-1C33-4AE7-80FB-2078C2E9418E}
 		{227F892E-4D13-42C2-8DB8-C73AC017C482} = {D95043DA-03EC-4E52-BA19-18C1A539B59A}
-		{E8F2A4E8-BBD1-475E-9851-C039B6FEEB73} = {105C81DF-2297-4B8B-9554-180081CE9F68}
 		{78BD8D49-A80E-4A5A-821B-15E6FB724511} = {DCAACDBD-F530-4D8E-99A0-5916DD436EC6}
 		{8D966E4F-99B8-4E7D-A302-4A5AEA1B534A} = {D95043DA-03EC-4E52-BA19-18C1A539B59A}
 		{4D61D8B2-EC8A-4182-8B2A-9CDA485B2BC6} = {8D966E4F-99B8-4E7D-A302-4A5AEA1B534A}
-		{69C0FFF8-4774-4EAC-AE53-87A59B9D776F} = {904EEB25-1C33-4AE7-80FB-2078C2E9418E}
-		{5608F2D5-5AC9-425E-B306-601A7C9F043B} = {69C0FFF8-4774-4EAC-AE53-87A59B9D776F}
-		{CB230DB2-2C80-4AA3-9109-80CD2EA3574D} = {69C0FFF8-4774-4EAC-AE53-87A59B9D776F}
-		{BBC15DD6-B825-4BDF-AAF1-ADB075BEEEB8} = {69C0FFF8-4774-4EAC-AE53-87A59B9D776F}
+		{36535F29-4C16-454F-AD9B-B4CFF0E22E7A} = {904EEB25-1C33-4AE7-80FB-2078C2E9418E}
+		{34542E09-D711-4F2D-AC06-5FAA8E22E13D} = {904EEB25-1C33-4AE7-80FB-2078C2E9418E}
+		{F8A78D09-6ADA-428A-83AB-CA37F2606BF6} = {34542E09-D711-4F2D-AC06-5FAA8E22E13D}
+		{51DF834F-4F3B-4140-964A-07D3106FE22E} = {F8A78D09-6ADA-428A-83AB-CA37F2606BF6}
+		{15704DA5-1954-4B0C-A087-D9964EA70773} = {51DF834F-4F3B-4140-964A-07D3106FE22E}
+		{ABAE47F4-4A7D-4387-9676-D7B8A558EE27} = {36535F29-4C16-454F-AD9B-B4CFF0E22E7A}
+		{0598A534-3075-4C31-B4E0-BB7C8257FA97} = {ABAE47F4-4A7D-4387-9676-D7B8A558EE27}
+		{D8A2789C-933B-450D-A645-86991B4BE817} = {ABAE47F4-4A7D-4387-9676-D7B8A558EE27}
+		{8F1FF1E3-1E18-46AE-A064-372732529847} = {ABAE47F4-4A7D-4387-9676-D7B8A558EE27}
+		{21A58A93-28E4-45BC-A16A-22A0AC3219FC} = {ABAE47F4-4A7D-4387-9676-D7B8A558EE27}
 	EndGlobalSection
 EndGlobal
