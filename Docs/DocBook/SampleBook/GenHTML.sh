@@ -25,3 +25,5 @@ cp -r $DOCBOOK_XSL_DIR/images/* Dist/pdf/images/docbook
 
 xsltproc --xinclude --output Dist/html/single/SampleBook.html XSL/html.xsl Content/SampleBook.xml
 xsltproc --xinclude --output Dist/html/chunk/SampleBook.html XSL/chunk.xsl Content/SampleBook.xml
+
+/cygdrive/C/Users/Sarkuya/AppData/Local/Google/Chrome/Application/chrome.exe Dist/html/chunk/index.html

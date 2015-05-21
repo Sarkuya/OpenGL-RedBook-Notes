@@ -397,7 +397,7 @@ These file are bin bash files to be run under **Cygwin terminal**.
     $FOP_DIR/fop -c C:/cygwin/usr/share/sgml/docbook/fop-1.1/conf/fop.xconf Dist/pdf/SampleBook.fo Dist/pdf/SampleBook.pdf
 
 
-### Tips for Creating Shell Script ###
+## Tips for Creating Shell Script ##
  
 Line endings are different in Unix and Windows. In order to create a shell script that executed in Cygwin shell and edit in Visual Studio, here's how:
 
@@ -423,6 +423,42 @@ Since we create the file in Cygwin shell, it's line endings would be Unix. And s
  it would remain the Unix format while being edited and save in Visual Studio.
 
 If your are sure that the script are correct while you doesn't get the expected result, try this first.
+
+## Automation in Visual Studio ##
+
+After we can run the scripts in cygwin shell, we can go further to do automation in Visual Studio.
+
+1.  Add the following line to the end of *GenHTML.sh*:
+    
+        /cygdrive/C/Users/Sarkuya/AppData/Local/Google/Chrome/Application/chrome.exe Dist/html/chunk/index.html
+
+2.  In Visual Studio, click on menu TOOLS -> External Tools...
+
+    This will open the External Tools dialog.
+
+3.  In External Tools dialog, click on Add button.
+
+    This will add a new tool in the lists.
+
+4.  Edit as below:
+
+        Title: GenHTML
+        Commands: C:\cgywin\bin\mintty.exe
+        Arguments: D:\GitHub\OpenGL-RedBook-Notes\Docs\DocBook\SampleBook\GenHTML.sh
+        Initial directory: D:\GitHub\OpenGL-RedBook-Notes\Docs\DocBook\SampleBook
+
+    What is done here is to open the Cygwin terminal, and switch to the SampleBook directory,
+     and run the GenHTML.sh in this direcotry.
+
+5.  Click on OK button in External Tools dialog to close the dialog.
+
+6.  Click on menu TOOLS -> GenHTML, GenHTML.sh will be invoked to generate html files, and the index page will
+     be opened in chrome.
+
+    (**Note**: Chrome should be opened previously before invoking the command,
+     otherwise Chrome will not find the index file in a ralative path way). 
+
+7.  If you wish, you can then add this menu to customized toolbar.
 
 ## Todo: About automatic works by using Makefile ##
 
