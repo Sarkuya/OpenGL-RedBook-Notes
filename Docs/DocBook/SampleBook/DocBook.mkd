@@ -466,4 +466,4 @@ After we can run the scripts in cygwin shell, we can go further to do automation
 
 1. Documention with DocBook on Win32: <http://www.codeproject.com/Articles/4481/Documention-with-DocBook-on-Win32>
 2. Getting started/XML Toolchain and Man Pages, opengl.org: <https://www.opengl.org/wiki/Getting_started/XML_Toolchain_and_Man_Pages>
-
+3. GNU Make Manual, GNU, <http://www.gnu.org/software/make/manual/>

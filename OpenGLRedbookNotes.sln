@@ -48,6 +48,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleBook", "SampleBook", 
 		Docs\DocBook\SampleBook\DocBook.mkd = Docs\DocBook\SampleBook\DocBook.mkd
 		Docs\DocBook\SampleBook\GenHTML.sh = Docs\DocBook\SampleBook\GenHTML.sh
 		Docs\DocBook\SampleBook\GenPDF.sh = Docs\DocBook\SampleBook\GenPDF.sh
+		Docs\DocBook\SampleBook\makefile = Docs\DocBook\SampleBook\makefile
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{0598A534-3075-4C31-B4E0-BB7C8257FA97}"
@@ -71,6 +72,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XSL", "XSL", "{21A58A93-28E
 		Docs\DocBook\SampleBook\XSL\pdf.xsl = Docs\DocBook\SampleBook\XSL\pdf.xsl
 		Docs\DocBook\SampleBook\XSL\sharedparts.xsl = Docs\DocBook\SampleBook\XSL\sharedparts.xsl
 		Docs\DocBook\SampleBook\XSL\sharedparts_html.xsl = Docs\DocBook\SampleBook\XSL\sharedparts_html.xsl
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GNUMake", "GNUMake", "{E1D2BA6D-C4AA-4452-BFDB-7C2833827B5B}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\Markdown\GNUMake\Make.mkd = Docs\Markdown\GNUMake\Make.mkd
 	EndProjectSection
 EndProject
 Global
@@ -118,5 +124,6 @@ Global
 		{D8A2789C-933B-450D-A645-86991B4BE817} = {ABAE47F4-4A7D-4387-9676-D7B8A558EE27}
 		{8F1FF1E3-1E18-46AE-A064-372732529847} = {ABAE47F4-4A7D-4387-9676-D7B8A558EE27}
 		{21A58A93-28E4-45BC-A16A-22A0AC3219FC} = {ABAE47F4-4A7D-4387-9676-D7B8A558EE27}
+		{E1D2BA6D-C4AA-4452-BFDB-7C2833827B5B} = {34542E09-D711-4F2D-AC06-5FAA8E22E13D}
 	EndGlobalSection
 EndGlobal
