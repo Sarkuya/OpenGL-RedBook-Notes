@@ -35,7 +35,8 @@ The setting ups in this section are done in *%CYGWIN_HOME%* directory.
 
 ### FOP ###
 
-There is no fop in Cygwin, so you will have to download it yourself. Unzip it to the folder:
+There is no FOP in Cygwin, so you will have to download it yourself. There are two types of FOP binary, *.zip* and *.tar.gz*.
+ Since we use FOP in Cygwin, so choose .tar.gz to downland and unzip it to the folder:
 
     %CYGWIN_HOME%/usr/share/sgml/docbook/fop-1.1
 

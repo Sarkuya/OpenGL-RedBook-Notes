@@ -22,4 +22,12 @@ If any prerequisite changed, make will carry out the recipes in a rule
  to create a target file.
 
 
+Targets that do not refer to files but are just actions are called *phony targets*.
 
+    .PHONY clean
+    clean:
+        rm -r Dist
+
+## References ##
+
+1. GNU Make Manual: <http://www.gnu.org/software/make/manual/>
