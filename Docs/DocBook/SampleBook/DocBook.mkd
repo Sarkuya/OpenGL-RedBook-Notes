@@ -461,7 +461,46 @@ After we can run the scripts in cygwin shell, we can go further to do automation
 
 7.  If you wish, you can then add this menu to customized toolbar.
 
-## Todo: About automatic works by using Makefile ##
+## Automation Via GNU Make ##
+
+To be simplified, let's think of generating html chunk files first.
+
+The goal is to genrate html chunk files, along with responding css files and image files.
+ The final result would be:
+
+* Dist
+    * html
+        * chunk
+            * css
+                * CSS FILES
+            * images
+                * custom
+                    * IMAGE files created by the user
+                * docbook
+                    * IMAGE files copyied from DocBook xslstylesheet
+        * lots of html FILES
+
+For the html files, we will use the following command to generate them:
+
+    xsltproc --xinclude --output Dist/html/chunk/SampleBook.html XSL/chunk.xsl Content/SampleBook.xml
+
+That is, the result will depend on XSL/chunk.xsl and Content/SampleBook.xml.
+
+Note that even if the directory *Dist/html/chunk* might not exist previously, xsltproc will create it for us automatically.
+
+The dependencies will not be enough for the final distrbution. We need to copy the css files and image files to the *Dist* directory.
+ And these files are also the dependencies for such action.
+
+So, the css depnedencies would be
+
+    Dist/html/chunk/css/CSS_FILES
+
+And before copying these css files to the Dist directory, the *Dist/html/chunk/css* directory should be created by hand previously.
+
+That means *Dist/html/chunk/css/CSS_FILES* needs a dependency whose goal is to create such directory. Such kind of prerequisite
+ is *order-only-prerequisite*.
+
+
 
 ## References ##
 
