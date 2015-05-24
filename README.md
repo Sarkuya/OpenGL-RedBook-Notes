@@ -2,7 +2,7 @@
 
 Sample codes on the OpenGL red book, and docs on OpenGL.
 
-Documentation is made by using Markdown.
+Documentation is made using Markdown and DocBook.
 
 ## About This Project ##
 
