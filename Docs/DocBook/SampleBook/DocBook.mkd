@@ -641,8 +641,10 @@ To solve this problem, I'd rather declare a system variable named *CYGWIN_HOME* 
     clean :
 	    -rm -r Dist
 
-
 It's ugly, yet it works.
+
+For the *chunk* and *single* to work, you should create the empty *Image* directory
+ even if there are no images in it. 
 
 ## References ##
 

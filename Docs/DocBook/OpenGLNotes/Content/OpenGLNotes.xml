@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      version="5.0"
+      xml:lang="en">
+
+  <title>OpenGL Notes</title>
+  <subtitle>Notes on OpenGL Programming Guide, Eighth Edition</subtitle>
+
+  <info>
+    <author>
+      <personname>Sarkuya</personname>
+    </author>
+    <edition>1.0</edition>
+    <releaseinfo>Beta</releaseinfo>
+    <date>2015-05-25 11:19</date>
+    <copyright>
+      <year>2015</year>
+      <holder>Sarkuya</holder>
+    </copyright>
+    <legalnotice>
+      <para>All rights reservered.</para>
+    </legalnotice>
+  </info>
+
+  <xi:include href="prologues/dedication.xml" />
+  
+</book>
