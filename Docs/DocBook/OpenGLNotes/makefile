@@ -1,39 +1,129 @@
+# Makefile for generating DocBook documents.
+# Copyright (C) Sarkuya 2015.5
+
 # Variables
 # --------------------------
+
+# declare this variable in system environment if you use this makefile in different computers
+# CYGWIN_HOME = C:/cygwin64
 
 DOCBOOK_DIR = /usr/share/sgml/docbook
 DOCBOOK_XSL_DIR = $(DOCBOOK_DIR)/xsl-stylesheets
 FOP_DIR = $(DOCBOOK_DIR)/fop-1.1
 
+CONTENT_DIR = Content
+CSS_DIR = CSS
+IMAGE_DIR = Images
+XSL_DIR = XSL
+
+DIST_DIR = Dist
+DIST_HTML_DIR = $(DIST_DIR)/html
+
+DIST_HTML_CHUNK_DIR = $(DIST_HTML_DIR)/chunk
+DIST_HTML_CHUNK_CSS_DIR = $(DIST_HTML_CHUNK_DIR)/css
+DIST_HTML_CHUNK_IMAGE_DIR = $(DIST_HTML_CHUNK_DIR)/images
+DIST_HTML_CHUNK_IMAGE_CUSTOM_DIR = $(DIST_HTML_CHUNK_IMAGE_DIR)/custom
+DIST_HTML_CHUNK_IMAGE_DOCBOOK_DIR = $(DIST_HTML_CHUNK_IMAGE_DIR)/docbook
+
+DIST_HTML_SINGLE_DIR = $(DIST_HTML_DIR)/single
+DIST_HTML_SINGLE_CSS_DIR = $(DIST_HTML_SINGLE_DIR)/css
+DIST_HTML_SINGLE_IMAGE_DIR = $(DIST_HTML_SINGLE_DIR)/images
+DIST_HTML_SINGLE_IMAGE_CUSTOM_DIR = $(DIST_HTML_SINGLE_IMAGE_DIR)/custom
+DIST_HTML_SINGLE_IMAGE_DOCBOOK_DIR = $(DIST_HTML_SINGLE_IMAGE_DIR)/docbook
+
+DIST_PDF_DIR = $(DIST_DIR)/pdf
+DIST_PDF_IMAGE_DIR = $(DIST_PDF_DIR)/images
+DIST_PDF_IMAGE_CUSTOM_DIR = $(DIST_PDF_IMAGE_DIR)/custom
+DIST_PDF_IMAGE_DOCBOOK_DIR = $(DIST_PDF_IMAGE_DIR)/docbook
+
+DOCBOOK_XML_FILES = $(CONTENT_DIR)/$(wildcard *.xml)
 DOCBOOK_BOOK_NAME = OpenGLNotes
+DOCBOOK_MAIN_XML_FILE = $(CONTENT_DIR)/$(DOCBOOK_BOOK_NAME).xml
+
+XSL_CHUNK_FILE = $(XSL_DIR)/chunk.xsl
+XSL_SINGLE_FILE = $(XSL_DIR)/html.xsl
+XSL_PDF_FILE = $(XSL_DIR)/pdf.xsl
+
+CSS_FILES = $(wildcard *.css)
+
+DIST_CHUNK_FILE = $(DIST_HTML_CHUNK_DIR)/$(DOCBOOK_BOOK_NAME).html
+DIST_SINGLE_FILE = $(DIST_HTML_SINGLE_DIR)/$(DOCBOOK_BOOK_NAME).html
+
+DIST_PDF_FO_FILE = $(DIST_PDF_DIR)/$(DOCBOOK_BOOK_NAME).fo
+DIST_PDF_FILE = $(DIST_PDF_DIR)/$(DOCBOOK_BOOK_NAME).pdf
 
 # Targets
 # --------------------------
 
 .PHONY: all
-# all: chunk single pdf
+all: chunk single pdf
 
-chunk: Dist/html/chunk/$(DOCBOOK_BOOK_NAME).html
-single: Dist/html/single/$(DOCBOOK_BOOK_NAME).html
-pdf: Dist/pdf/$(DOCBOOK_BOOK_NAME).pdf
+chunk: $(DIST_CHUNK_FILE)
+single: $(DIST_SINGLE_FILE)
+pdf: $(DIST_PDF_FILE)
 
 # Dependencies
 # --------------------------
 
-XSL/chunk.xsl: XSL/sharedparts_html.xsl
-XSL/html.xsl: XSL/sharedparts_html.xsl
-XSL/sharedparts_html.xsl: XSL/sharedparts.xsl
-XSL/pdf.xsl: XSL/sharedparts.xsl
+$(XSL_CHUNK_FILE) : $(XSL_DIR)/sharedparts_html.xsl
+$(XSL_SINGLE_FILE) : $(XSL_DIR)/sharedparts_html.xsl
+$(XSL_DIR)/sharedparts_html.xsl : $(XSL_DIR)/sharedparts.xsl
+$(XSL_PDF_FILE) : $(XSL_DIR)/sharedparts.xsl
 
-Dist/html/chunk/%.html: Content/%.xml XSL/chunk.xsl
-	xsltproc --xinclude --output $@ XSL/chunk.xsl $<
+$(DIST_CHUNK_FILE): $(DOCBOOK_XML_FILES) $(XSL_CHUNK_FILE) COPY_CHUNK_FILES
+	xsltproc --xinclude --output $(DIST_CHUNK_FILE) $(XSL_CHUNK_FILE) $(DOCBOOK_MAIN_XML_FILE)
 
-Dist/html/single/%.html: Content/%.xml XSL/html.xsl
-	xsltproc --xinclude --output $@ XSL/html.xsl $<
+$(DIST_SINGLE_FILE): $(DOCBOOK_XML_FILES) $(XSL_SINGLE_FILE) COPY_SINGLE_FILES
+	xsltproc --xinclude --output $(DIST_SINGLE_FILE) $(XSL_SINGLE_FILE) $(DOCBOOK_MAIN_XML_FILE)
 
-Dist/pdf/%.pdf: Content/%.xml XSL/pdf.xsl
-	xsltproc --xinclude --output Dist/pdf/$(DOCBOOK_BOOK_NAME).fo --stringparam fop1.extensions 1 XSL/pdf.xsl $<
-	$(FOP_DIR)/fop -c $(CYGWIN_HOME)$(FOP_DIR)/conf/fop.xconf Dist/pdf/$(DOCBOOK_BOOK_NAME).fo $@
+$(DIST_PDF_FILE): $(DOCBOOK_XML_FILES) $(XSL_PDF_FILE) COPY_PDF_FILES
+	xsltproc --xinclude --output $(DIST_PDF_FO_FILE) --stringparam fop1.extensions 1 $(XSL_PDF_FILE) $(DOCBOOK_MAIN_XML_FILE)
+	$(FOP_DIR)/fop -c $(CYGWIN_HOME)$(FOP_DIR)/conf/fop.xconf $(DIST_PDF_FO_FILE) $(DIST_PDF_FILE)
+
+# Inspect with the changing of CSS files and image files
+# --------------------------
+
+COPY_CHUNK_FILES : CREATE_CHUNK_DIST_DIRS COPY_CHUNK_CSS_FILES COPY_CHUNK_CUSTOM_IMAGES
+COPY_SINGLE_FILES : CREATE_SINGLE_DIST_DIRS COPY_SINGLE_CSS_FILES COPY_SINGLE_CUSTOM_IMAGES
+COPY_PDF_FILES : CREATE_PDF_DIST_DIRS COPY_PDF_CUSTOM_IMAGES
+
+CREATE_CHUNK_DIST_DIRS : | $(DIST_HTML_CHUNK_DIR)
+$(DIST_HTML_CHUNK_DIR) :
+	mkdir -p $(DIST_HTML_CHUNK_CSS_DIR)
+	mkdir -p $(DIST_HTML_CHUNK_IMAGE_CUSTOM_DIR)
+	mkdir -p $(DIST_HTML_CHUNK_IMAGE_DOCBOOK_DIR)
+	cp -r -u $(DOCBOOK_XSL_DIR)/images/. $(DIST_HTML_CHUNK_IMAGE_DOCBOOK_DIR)
+
+CREATE_SINGLE_DIST_DIRS : | $(DIST_HTML_SINGLE_DIR)
+$(DIST_HTML_SINGLE_DIR) :
+	mkdir -p $(DIST_HTML_SINGLE_CSS_DIR)
+	mkdir -p $(DIST_HTML_SINGLE_IMAGE_CUSTOM_DIR)
+	mkdir -p $(DIST_HTML_SINGLE_IMAGE_DOCBOOK_DIR)
+	cp -r -u $(DOCBOOK_XSL_DIR)/images/. $(DIST_HTML_SINGLE_IMAGE_DOCBOOK_DIR)
+
+CREATE_PDF_DIST_DIRS : | $(DIST_PDF_DIR)
+$(DIST_PDF_DIR) :
+	mkdir -p $(DIST_PDF_IMAGE_CUSTOM_DIR)
+	mkdir -p $(DIST_PDF_IMAGE_DOCBOOK_DIR)
+	cp -r -u $(DOCBOOK_XSL_DIR)/images/. $(DIST_PDF_IMAGE_DOCBOOK_DIR)
+
+COPY_CHUNK_CSS_FILES : $(CSS_DIR)
+	cp -r $(CSS_DIR)/. $(DIST_HTML_CHUNK_CSS_DIR)
+
+COPY_CHUNK_CUSTOM_IMAGES : $(IMAGE_DIR)
+	cp -r -u $(IMAGE_DIR)/. $(DIST_HTML_CHUNK_IMAGE_CUSTOM_DIR)
+	
+COPY_SINGLE_CSS_FILES : $(CSS_DIR)
+	cp -r $(CSS_DIR)/. $(DIST_HTML_SINGLE_CSS_DIR)
+
+COPY_SINGLE_CUSTOM_IMAGES : $(IMAGE_DIR)
+	cp -r -u $(IMAGE_DIR)/. $(DIST_HTML_SINGLE_IMAGE_CUSTOM_DIR)
+
+COPY_PDF_CUSTOM_IMAGES : $(IMAGE_DIR)
+	cp -r -u $(IMAGE_DIR)/. $(DIST_PDF_IMAGE_CUSTOM_DIR)
+
+# Actions
+# --------------------------
 
 .PHONY: clean
 clean:
