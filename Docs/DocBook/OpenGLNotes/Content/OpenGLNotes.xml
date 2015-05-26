@@ -20,10 +20,15 @@
       <holder>Sarkuya</holder>
     </copyright>
     <legalnotice>
-      <para>All rights reservered.</para>
+      <para>All rights reserved.</para>
     </legalnotice>
   </info>
 
   <xi:include href="prologues/dedication.xml" />
+
+  <chapter>
+    <title>ABC</title>
+    <para>BBBB</para>
+  </chapter>
   
 </book>

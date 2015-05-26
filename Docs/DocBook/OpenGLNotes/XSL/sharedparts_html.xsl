@@ -34,8 +34,23 @@
       </xsl:choose>
     </xsl:if>
 
-
-    
+    <xsl:if test="ancestor::table/@tabstyle = 'striped'">
+      <xsl:choose>
+        <xsl:when test="ancestor::thead">
+          <xsl:attribute name="class">headerrow</xsl:attribute>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:choose>
+            <xsl:when test="$rownum mod 2 != 0">
+              <xsl:attribute name="class">oddrow</xsl:attribute>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:attribute name="class">evenrow</xsl:attribute>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
   </xsl:template>
 
 </xsl:stylesheet>

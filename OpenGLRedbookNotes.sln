@@ -78,6 +78,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GNUMake", "GNUMake", "{E1D2
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenGLNotes", "OpenGLNotes", "{68A1FFC7-7BD1-40BB-AB2B-E0B883122431}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\OpenGLNotes\makefile = Docs\DocBook\OpenGLNotes\makefile
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{88CFDB23-43C4-4D44-942A-E3661D1338AB}"
 	ProjectSection(SolutionItems) = preProject
@@ -93,6 +96,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XSL", "XSL", "{AFC752F5-6B61-47F8-A307-6AE40035DBEC}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\DocBook\OpenGLNotes\XSL\chunk.xsl = Docs\DocBook\OpenGLNotes\XSL\chunk.xsl
+		Docs\DocBook\OpenGLNotes\XSL\html.xsl = Docs\DocBook\OpenGLNotes\XSL\html.xsl
+		Docs\DocBook\OpenGLNotes\XSL\pdf.xsl = Docs\DocBook\OpenGLNotes\XSL\pdf.xsl
+		Docs\DocBook\OpenGLNotes\XSL\sharedparts.xsl = Docs\DocBook\OpenGLNotes\XSL\sharedparts.xsl
 		Docs\DocBook\OpenGLNotes\XSL\sharedparts_html.xsl = Docs\DocBook\OpenGLNotes\XSL\sharedparts_html.xsl
 	EndProjectSection
 EndProject
