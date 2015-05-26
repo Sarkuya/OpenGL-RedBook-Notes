@@ -26,9 +26,6 @@
 
   <xi:include href="prologues/dedication.xml" />
 
-  <chapter>
-    <title>ABC</title>
-    <para>BBBB</para>
-  </chapter>
+  <xi:include href="chapters/QuickStart.xml" />
   
 </book>

@@ -88,6 +88,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{88CF
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSS", "CSS", "{704A0E4A-011B-4978-BCD5-73300ED62B06}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\OpenGLNotes\CSS\style.css = Docs\DocBook\OpenGLNotes\CSS\style.css
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{EF94C597-698B-48BD-B844-FD43E9319297}"
 EndProject
@@ -105,6 +108,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prologues", "prologues", "{7E60AE52-65F2-4329-B6EE-7EA995E92194}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\DocBook\OpenGLNotes\Content\prologues\dedication.xml = Docs\DocBook\OpenGLNotes\Content\prologues\dedication.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapters", "chapters", "{17FD8FA7-BD6A-479D-BEDF-FF234ECA3299}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\OpenGLNotes\Content\chapters\QuickStart.xml = Docs\DocBook\OpenGLNotes\Content\chapters\QuickStart.xml
 	EndProjectSection
 EndProject
 Global
@@ -159,5 +167,6 @@ Global
 		{D3C3C369-E1E7-449E-8231-B41F3B0ABADD} = {ABAE47F4-4A7D-4387-9676-D7B8A558EE27}
 		{AFC752F5-6B61-47F8-A307-6AE40035DBEC} = {68A1FFC7-7BD1-40BB-AB2B-E0B883122431}
 		{7E60AE52-65F2-4329-B6EE-7EA995E92194} = {88CFDB23-43C4-4D44-942A-E3661D1338AB}
+		{17FD8FA7-BD6A-479D-BEDF-FF234ECA3299} = {88CFDB23-43C4-4D44-942A-E3661D1338AB}
 	EndGlobalSection
 EndGlobal

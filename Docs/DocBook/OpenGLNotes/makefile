@@ -4,8 +4,10 @@
 # Variables
 # --------------------------
 
-# declare this variable in system environment if you use this makefile in different computers
-# CYGWIN_HOME = C:/cygwin64
+# declare these variables in system environment if you use this makefile in different computers
+# CYGWIN_HOME
+# CHROME_HOME
+# ADOBEREADER_HOME
 
 DOCBOOK_DIR = /usr/share/sgml/docbook
 DOCBOOK_XSL_DIR = $(DOCBOOK_DIR)/xsl-stylesheets
@@ -46,11 +48,16 @@ XSL_PDF_FILE = $(XSL_DIR)/pdf.xsl
 
 CSS_FILES = $(wildcard *.css)
 
-DIST_CHUNK_FILE = $(DIST_HTML_CHUNK_DIR)/$(DOCBOOK_BOOK_NAME).html
+DIST_CHUNK_FILE = $(DIST_HTML_CHUNK_DIR)/index.html
 DIST_SINGLE_FILE = $(DIST_HTML_SINGLE_DIR)/$(DOCBOOK_BOOK_NAME).html
 
 DIST_PDF_FO_FILE = $(DIST_PDF_DIR)/$(DOCBOOK_BOOK_NAME).fo
 DIST_PDF_FILE = $(DIST_PDF_DIR)/$(DOCBOOK_BOOK_NAME).pdf
+
+# Browser and PDF Application
+# --------------------------
+BROWSER_APP = "$(CHROME_HOME)/chrome.exe"
+PDFREADER_APP = "$(ADOBEREADER_HOME)/AcroRd32.exe"
 
 # Targets
 # --------------------------
@@ -72,13 +79,16 @@ $(XSL_PDF_FILE) : $(XSL_DIR)/sharedparts.xsl
 
 $(DIST_CHUNK_FILE): $(DOCBOOK_XML_FILES) $(XSL_CHUNK_FILE) COPY_CHUNK_FILES
 	xsltproc --xinclude --output $(DIST_CHUNK_FILE) $(XSL_CHUNK_FILE) $(DOCBOOK_MAIN_XML_FILE)
-
+	$(BROWSER_APP) $(DIST_CHUNK_FILE)
+	
 $(DIST_SINGLE_FILE): $(DOCBOOK_XML_FILES) $(XSL_SINGLE_FILE) COPY_SINGLE_FILES
 	xsltproc --xinclude --output $(DIST_SINGLE_FILE) $(XSL_SINGLE_FILE) $(DOCBOOK_MAIN_XML_FILE)
+	$(BROWSER_APP) $(DIST_SINGLE_FILE)
 
 $(DIST_PDF_FILE): $(DOCBOOK_XML_FILES) $(XSL_PDF_FILE) COPY_PDF_FILES
 	xsltproc --xinclude --output $(DIST_PDF_FO_FILE) --stringparam fop1.extensions 1 $(XSL_PDF_FILE) $(DOCBOOK_MAIN_XML_FILE)
 	$(FOP_DIR)/fop -c $(CYGWIN_HOME)$(FOP_DIR)/conf/fop.xconf $(DIST_PDF_FO_FILE) $(DIST_PDF_FILE)
+	$(PDFREADER_APP) $(DIST_PDF_FILE)
 
 # Inspect with the changing of CSS files and image files
 # --------------------------

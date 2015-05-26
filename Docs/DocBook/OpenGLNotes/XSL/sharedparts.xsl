@@ -23,14 +23,19 @@
   <xsl:param name="ulink.hyphenate.chars">/&amp;?</xsl:param>
   <xsl:param name="ulink.hyphenate">&#xAD;</xsl:param>
 
-  <xsl:param name="local.110n.xml" select="document('')" />
-  <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/110n/1.0">
+  <xsl:param name="local.l10n.xml" select="document('')"/>
+  <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
     <l:l10n language="zh_cn">
       <l:context name="title-numbered">
-        <l:template name="part" text="第 %n 部分 %t" />
-        <l:template name="chapter" text="第 %n 章 %t" />
-        <l:template name="section" text="%n %t" />
-        <l:template name="appendix" text="附录 %n. %t" />
+        <l:template name="chapter" text="第 %n 章 %t"/>
+        <l:template name="section" text="%n %t"/>
+      </l:context>
+    </l:l10n>
+
+    <l:l10n language="en">
+      <l:context name="title-numbered">
+        <l:template name="chapter" text="Chapter %n. %t"/>
+        <l:template name="section" text="%n %t"/>
       </l:context>
     </l:l10n>
   </l:i18n>

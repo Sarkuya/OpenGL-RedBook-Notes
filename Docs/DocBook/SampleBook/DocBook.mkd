@@ -650,4 +650,6 @@ For the *chunk* and *single* to work, you should create the empty *Image* direct
 
 1. Documention with DocBook on Win32: <http://www.codeproject.com/Articles/4481/Documention-with-DocBook-on-Win32>
 2. Getting started/XML Toolchain and Man Pages, opengl.org: <https://www.opengl.org/wiki/Getting_started/XML_Toolchain_and_Man_Pages>
-3. GNU Make Manual, GNU, <http://www.gnu.org/software/make/manual/>
+3. GNU Make Manual, GNU: <http://www.gnu.org/software/make/manual/>
+4. DocBook 5: The Definitive Guide: <http://www.docbook.org/tdg5/en/html/docbook.html>
+5. DocBook XSL: The Complete Guide, Fourth Edition: <http://www.sagehill.net/docbookxsl/index.html>

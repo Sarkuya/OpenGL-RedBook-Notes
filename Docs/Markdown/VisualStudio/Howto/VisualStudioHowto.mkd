@@ -20,8 +20,11 @@ All other projects depend on SharedComps. So these projects should have the conf
 
     ![Include Dir](images/VS_OpenGL_Projs_Include_Dir.png "Include Dir")
 
+## Line Wrap ##
 
+To set the auto line wrap, click from menu:
 
+TOOLS -> Options -> Text Editor -> All Languages -> General -> Settings -> Word wrap
 
 ## References ##
 
