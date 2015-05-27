@@ -8,15 +8,11 @@
   <xsl:output method="html" encoding="UTF-8" indent="yes" />
 
   <xsl:template name="user.header.content">
-    <p>
-      <b>Produced by Sarkuya</b>
-    </p>
-    <p>
-      <b>2015-05-26</b>
-    </p>
-    <p>
-      <b>Haikou, Hainan, China</b>
-    </p>
+    <div id="user-header">
+      <p><b>Produced by Sarkuya</b></p>
+      <p><b>2015-05-26</b></p>
+      <p><b>Haikou, Hainan, China</b></p>
+    </div>
   </xsl:template>
 
   <xsl:template name="section.titlepage.before.recto">
@@ -25,7 +21,7 @@
         <xsl:with-param name="object" select="/*[1]" />
       </xsl:call-template>
     </xsl:variable>
-    <p class="returntotop">
+    <p class="return_to_top">
       <a href="#{$top-anchor}">
         <xsl:text>Return to top</xsl:text>
       </a>

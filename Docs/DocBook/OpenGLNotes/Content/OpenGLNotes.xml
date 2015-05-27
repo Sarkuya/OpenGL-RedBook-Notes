@@ -24,8 +24,20 @@
     </legalnotice>
   </info>
 
-  <xi:include href="prologues/dedication.xml" />
+  <xi:include href="prologues/Dedication.xml" />
 
-  <xi:include href="chapters/QuickStart.xml" />
+  <part>
+    <title>OpenGL Fundermental</title>
+    <partintro>
+      <para>OpenGL fundermental concepts, background, skills.</para>
+      <literallayout>
+        <xref linkend="Chapter_Quick_Start" />
+      </literallayout>
+    </partintro>
+    <xi:include href="chapters/QuickStart.xml" />
+  </part>
+
+
+  <index />
   
 </book>

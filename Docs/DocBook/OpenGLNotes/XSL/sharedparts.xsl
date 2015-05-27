@@ -34,8 +34,10 @@
 
     <l:l10n language="en">
       <l:context name="title-numbered">
+        <l:template name="part" text="Part %n. %t"/>
         <l:template name="chapter" text="Chapter %n. %t"/>
         <l:template name="section" text="%n %t"/>
+        <l:template name="appendix" text="Appendix %n. %t"/>
       </l:context>
     </l:l10n>
   </l:i18n>

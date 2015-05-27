@@ -107,7 +107,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XSL", "XSL", "{AFC752F5-6B6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prologues", "prologues", "{7E60AE52-65F2-4329-B6EE-7EA995E92194}"
 	ProjectSection(SolutionItems) = preProject
-		Docs\DocBook\OpenGLNotes\Content\prologues\dedication.xml = Docs\DocBook\OpenGLNotes\Content\prologues\dedication.xml
+		Docs\DocBook\OpenGLNotes\Content\prologues\Dedication.xml = Docs\DocBook\OpenGLNotes\Content\prologues\Dedication.xml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapters", "chapters", "{17FD8FA7-BD6A-479D-BEDF-FF234ECA3299}"
