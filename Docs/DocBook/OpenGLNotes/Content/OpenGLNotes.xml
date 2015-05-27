@@ -39,5 +39,7 @@
 
 
   <index />
+
+  <xi:include href="epilogues/bibliography.xml" />
   
 </book>

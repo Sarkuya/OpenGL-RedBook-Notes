@@ -14,9 +14,16 @@
 
   <xsl:param name="ignore.image.scaling">1</xsl:param>
 
+  <!--
+  <xsl:param name="linenumbering.extension">1</xsl:param>
+  <xsl:param name="table.borders.with.css">1</xsl:param>
+  -->
+
   <xsl:template name="tr.attributes">
     <xsl:param name="row">.</xsl:param>
     <xsl:param name="rownum">0</xsl:param>
+
+    <!-- <xsl:variable name="hasheaderrow">0</xsl:variable> -->
 
     <xsl:if test="ancestor::table/@tabstyle = 'safe_color_table'">
       <xsl:choose>
@@ -38,8 +45,14 @@
       <xsl:choose>
         <xsl:when test="ancestor::thead">
           <xsl:attribute name="class">headerrow</xsl:attribute>
+          <!-- <xsl:variable name="hasheaderrow">1</xsl:variable> -->
         </xsl:when>
         <xsl:otherwise>
+          <!--
+          <xsl:if test="$hasheaderrow = 1">
+            <xsl:param name="rownum">$rownum + 1</xsl:param>
+          </xsl:if>
+          -->
           <xsl:choose>
             <xsl:when test="$rownum mod 2 != 0">
               <xsl:attribute name="class">oddrow</xsl:attribute>

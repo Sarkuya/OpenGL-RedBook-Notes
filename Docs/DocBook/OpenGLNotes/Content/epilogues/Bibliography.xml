@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<bibliography xmlns="http://docbook.org/ns/docbook">
+  <title>Bibliography</title>
+
+  <bibliomixed xreflabel="C++2000">
+    <author>
+      <personname>Bjarne Stroustrup,</personname>
+    </author>
+    <title>The C++ Programming Language [M]. </title>
+    <edition>Special Edition.</edition>
+    <address>America : </address>
+    <publishername>Pearson Education, Inc.</publishername>
+    <pubdate>2000</pubdate>
+  </bibliomixed>
+
+  <bibliomixed xreflabel="C++2013">
+    <author>
+      <personname>Bjarne Stroustrup,</personname>
+    </author>
+    <title>The C++ Programming Language [M]. </title>
+    <edition>Fourth Edition.</edition>
+    <address>America : </address>
+    <publishername>Addison-Wesley, Inc.</publishername>
+    <pubdate>2013</pubdate>
+  </bibliomixed>
+</bibliography>
