@@ -1,3 +1,186 @@
+html {
+    background: -webkit-gradient(linear, left top, left bottom, from(#00abeb), to(#fff));
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #fff;
+    margin: 1em;
+    padding: 0.5em;
+    -webkit-border-radius: 6px;
+    -webkit-box-shadow: 0 0 14px #123;
+}
+
+p {
+    line-height: 2em;
+}
+
+ul.itemizedlist li.listitem p,
+ol.orderedlist li.listitem p
+ {
+    line-height: 0.2em;
+}
+
+a {
+    color: #007dc3;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #666;
+}
+
+div.titlepage h1.title {
+    color: #0860A8;
+    text-align: center;
+}
+
+div.titlepage h2.subtitle {
+    color: #007AA0;
+    text-align: right;
+}
+
+div.titlepage h2.subtitle:before {
+    content: "--";
+}
+
+div.toc {
+    text-indent: 2em;
+}
+
+div.dedication div.titlepage h2.title,
+div.acknowledgements div.titlepage h2.title,
+div.preface div.titlepage h2.title,
+div.chapter div.titlepage h2.title,
+div.section div.titlepage h2.title,
+div.refentry h2,
+div.appendix div.titlepage h2.title,
+div.index div.titlepage h2.title,
+div.bibliography div.titlepage h2.title,
+div.colophon h2 {
+    color: #0860A8;
+}
+
+div.section div.titlepage h3.title {
+    color: #007AA0;
+}
+
+div.itemizedlist {
+    margin-left: 0px;
+}
+
+div.itemizedlist ul.itemizedlist {
+    line-height: 0.5em;
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+div.itemizedlist ul.itemizedlist li {
+    padding-left: 2em;
+}
+
+div.itemizedlist ul.itemizedlist li.listitem pre.programlisting {
+    line-height: 1em;
+}
+
+div.variablelist {
+    text-indent: 2em;
+}
+
+code, button, samp, pre {
+    color: #666;
+    font-family: Courier New, Courier, Conolas, monospace;
+}
+
+code.function {
+    color: blue;
+    font-weight: bold;
+}
+
+code.constant {
+    color: steelblue;
+    font-weight: bold;
+}
+
+span.command {
+    color: orange;
+}
+
+pre.programlisting, pre.synopsis, pre.screen, div.screenshot {
+    margin-left: 2em;
+    padding: 1em;
+}
+
+pre.programlisting {
+    background-color: #F9F9F9;
+    border: 1px dashed #2F6FAB;
+}
+
+pre.synopsis {
+    background-color: #E0E0E0;
+    border-left: 5px solid limegreen;
+    border-right: 5px solid limegreen;
+}
+
+pre.screen, div.screenshot {
+    color: #EEE;
+    background-color: #333;
+}
+
+ol.orderedlist, ol.procedure {
+    padding-left: 4em;
+    margin-top: -1em;
+}
+
+ol.orderedlist li.listitem p,
+ol.procedure li.step p {
+    margin: 0em;
+    padding: 0em;
+    text-indent: 0em;
+}
+
+ul.itemizedlist {
+    margin-top: -1em;
+}
+
+ul.itemizedlist li.listitem p {
+    margin: 0em;
+    padding: 0em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th {
+    padding: 0.3em 0.5em;
+}
+
+table td {
+    padding: 0.5em;
+}
+
+table.graybox caption {
+    text-align: left;
+    margin-bottom: 0.5em;
+}
+
+table.graybox th, table.graybox td {
+    border: 1px solid #2F6FAB;
+}
+
+table.graybox th {
+    color: #EEE;
+    background-color: #496291;
+}
+
+
+
+
+
+
+
 .navheader {
     font-family: Tahoma, Arial, Helvetica, sans-serif;
     background-color: lightgray;

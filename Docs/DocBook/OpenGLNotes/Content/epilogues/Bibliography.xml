@@ -24,4 +24,9 @@
     <publishername>Addison-Wesley, Inc.</publishername>
     <pubdate>2013</pubdate>
   </bibliomixed>
+
+  <bibliomixed xreflabel="GNU_Make">
+    <title>The GNU Make Manual [EB/OL]. </title>
+    <bibliosource class="uri">http://www.gnu.org/software/make/manual/</bibliosource>
+  </bibliomixed>
 </bibliography>
