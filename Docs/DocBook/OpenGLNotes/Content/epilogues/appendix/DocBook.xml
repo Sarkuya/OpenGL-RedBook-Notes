@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<appendix xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>DocBook</title>
+
+  <section>
+    <title>Make Linking URL Opened in New Window</title>
+    <programlisting><![CDATA[<xsl:param name="ulink.target">_new</xsl:param>
+]]></programlisting>
+  </section>
+
+  <section>
+    <title>Question and Answers</title>
+    <para>Error: "namespace error : Namespace prefix xlink for href on link is not defined"</para>
+    <para>Solution: add 'xmlns:xlink="http://www.w3.org/1999/xlink"'.</para>
+    <programlisting><![CDATA[<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+...
+</book>
+]]></programlisting>
+  </section>
+
+  <section>
+    <title>References</title>
+    <orderedlist>
+      <listitem><para>DocBook 5: The Definitive Guide, docbook.org: <link xlink:href="http://www.docbook.org/tdg5/en/html/docbook.html" /></para></listitem>
+      <listitem><para>DocBook XSL: The Complete Guide (Fourth Edition), sagehill.net: <link xlink:href="http://www.sagehill.net/docbookxsl/index.html" /></para></listitem>
+      <listitem><para>DocBook XSL Stylesheets: Reference Documentation, docbook.sourceforge.net: <link xlink:href="http://docbook.sourceforge.net/release/xsl/current/doc/index.html" /></para></listitem>
+      <listitem><para>DocBook 5 快速起步教程, Sarkuya: <link xlink:href="http://blog.csdn.net/sarkuya/article/details/6854323" /></para></listitem>
+      <listitem><para>Bibliography, sciencebuddies.org: <link xlink:href="http://www.sciencebuddies.org/science-fair-projects/project_bibliography.shtml" /></para></listitem>
+    </orderedlist>
+  </section>
+</appendix>

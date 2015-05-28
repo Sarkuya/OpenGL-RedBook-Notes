@@ -120,6 +120,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "epilogues", "epilogues", "{
 		Docs\DocBook\OpenGLNotes\Content\epilogues\Bibliography.xml = Docs\DocBook\OpenGLNotes\Content\epilogues\Bibliography.xml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "appendix", "appendix", "{1180839F-BB9B-4262-947C-28B2F588BB96}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\OpenGLNotes\Content\epilogues\appendix\DocBook.xml = Docs\DocBook\OpenGLNotes\Content\epilogues\appendix\DocBook.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -174,5 +179,6 @@ Global
 		{7E60AE52-65F2-4329-B6EE-7EA995E92194} = {88CFDB23-43C4-4D44-942A-E3661D1338AB}
 		{17FD8FA7-BD6A-479D-BEDF-FF234ECA3299} = {88CFDB23-43C4-4D44-942A-E3661D1338AB}
 		{BB249CA4-AE19-4758-A029-266416E21761} = {88CFDB23-43C4-4D44-942A-E3661D1338AB}
+		{1180839F-BB9B-4262-947C-28B2F588BB96} = {BB249CA4-AE19-4758-A029-266416E21761}
 	EndGlobalSection
 EndGlobal

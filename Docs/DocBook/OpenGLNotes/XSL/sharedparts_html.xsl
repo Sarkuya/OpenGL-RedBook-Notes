@@ -8,6 +8,8 @@
   <xsl:param name="callout.graphics.path">images/docbook/callouts/</xsl:param>
   <xsl:param name="img.src.path">images/custom</xsl:param>
 
+  <xsl:param name="ulink.target">_new</xsl:param>
+  
   <!--
   <xsl:param name="default.table.frame">border</xsl:param>
   -->

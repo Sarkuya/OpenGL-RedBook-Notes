@@ -19,7 +19,7 @@ p {
 ul.itemizedlist li.listitem p,
 ol.orderedlist li.listitem p
  {
-    line-height: 0.2em;
+    line-height: 2em;
 }
 
 a {

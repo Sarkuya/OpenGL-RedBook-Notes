@@ -37,9 +37,11 @@
     <xi:include href="chapters/QuickStart.xml" />
   </part>
 
+  <!-- Appendix goes here -->
+  <xi:include href="epilogues/appendix/DocBook.xml" />
 
   <index />
 
-  <xi:include href="epilogues/bibliography.xml" />
+  <xi:include href="epilogues/Bibliography.xml" />
   
 </book>
