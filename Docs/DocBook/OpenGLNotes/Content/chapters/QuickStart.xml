@@ -44,7 +44,7 @@
       <title>About VAOs and VBOs</title>
       <para>In order to improve performence, some data in our application would nevertheless be copied to buffers. Again, it's easy since we care about only what to copy and <emphasis>NOT</emphasis> how to copy. </para>
       <para>In a client-server network, the client computer issues OpenGL commands to the server through the network. The client might issue lots of drawing command at the same time. If we send the vetex data each time we send drawing command, the netwok's inefficiency is obvious.</para>
-      <para>OpenGL take such a approach - OpenGL server created vetex-buffer objects (<emphasis>VBO</emphasis>) to allocate memory chunks to store the vetices data, tagged (or indexed) with the vertex array object (<emphasis>VAO</emphasis>) names. And each time the OpenGL application needs to render images using these vetices data, it does not actually transfer vertices data from the client, it just tell OpenGL server that it would like to use which VAO's buffer data by rebinding a specific VAO as the current VAO.</para>
+      <para>OpenGL take such a approach - OpenGL server created vertex-buffer objects (VBO<indexterm><primary>VBO</primary><see>Vertex-Buffer Object</see></indexterm><indexterm><primary>Vertex-Buffer Object</primary></indexterm>) to allocate memory chunks to store the vetices data, tagged (or indexed) with the vertex array object (VAO<indexterm><primary>VAO</primary><see>Vertex Array Object</see></indexterm><indexterm><primary>Vertex Array Object</primary></indexterm>) names. And each time the OpenGL application needs to render images using these vetices data, it does not actually transfer vertices data from the client, it just tell OpenGL server that it would like to use which VAO's buffer data by rebinding a specific VAO as the current VAO.</para>
       <para>So, when receiving drawing commands from the client, OpenGL server fetches the vetices data previously saved from the buffer tagged with specific VAO name instead of from the client, and sends these data to the framebuffer immediately.</para>
       <para>The same rule applies to non-network client-server mode. In this mode, the OpenGL server is the computer hosting the OpenGL program, and still it is the OpenGL server who manages the VAOs and VBOs.</para>
     </section>
@@ -89,15 +89,9 @@
 
   <section>
     <title>Your First OpenGL Application</title>
-  </section>
-
-  <section>
-    <title>Triangles In Detail</title>
     <example>
       <title>triangles.cpp</title>
-      <programlisting>
-        <![CDATA[
-#include <iostream>
+      <programlisting><![CDATA[#include <iostream>
 
 #include "vgl.h"
 #include "LoadShaders.h"
@@ -190,10 +184,13 @@ int main(int argc, char** argv) {
 
 	glutDisplayFunc(display);
 	glutMainLoop();
-}
-      ]]>
-</programlisting>
+}]]></programlisting>
     </example>
+  </section>
+
+  <section>
+    <title>Triangles In Detail</title>
+    
   </section>
 
 </chapter>

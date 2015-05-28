@@ -24,11 +24,16 @@
   <section>
     <title>References</title>
     <orderedlist>
+      <listitem><para>DocBook 5.1: The Definitive Guide, docbook.org: <link xlink:href="http://www.docbook.org/tdg51/en/html/docbook.html" /></para></listitem>
       <listitem><para>DocBook 5: The Definitive Guide, docbook.org: <link xlink:href="http://www.docbook.org/tdg5/en/html/docbook.html" /></para></listitem>
+      <listitem><para>DocBook V5.0: The Transition Guide, docbook.org: <link xlink:href="http://www.docbook.org/docs/howto/" /></para></listitem>
       <listitem><para>DocBook XSL: The Complete Guide (Fourth Edition), sagehill.net: <link xlink:href="http://www.sagehill.net/docbookxsl/index.html" /></para></listitem>
       <listitem><para>DocBook XSL Stylesheets: Reference Documentation, docbook.sourceforge.net: <link xlink:href="http://docbook.sourceforge.net/release/xsl/current/doc/index.html" /></para></listitem>
+      
       <listitem><para>DocBook 5 快速起步教程, Sarkuya: <link xlink:href="http://blog.csdn.net/sarkuya/article/details/6854323" /></para></listitem>
       <listitem><para>Bibliography, sciencebuddies.org: <link xlink:href="http://www.sciencebuddies.org/science-fair-projects/project_bibliography.shtml" /></para></listitem>
+      <listitem><para>Getting started/XML Toolchain and Man Page, opengl.org: <link xlink:href="https://www.opengl.org/wiki/Getting_started/XML_Toolchain_and_Man_Pages" /></para></listitem>
+      <listitem><para>OpenGL API Manual Source, opengl.org: <link xlink:href="https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/docs/man4/" /></para></listitem>
     </orderedlist>
   </section>
 </appendix>

@@ -37,6 +37,54 @@
     <xi:include href="chapters/QuickStart.xml" />
   </part>
 
+  <part>
+    <title>References</title>
+    <reference>
+      <title>Reference Pages</title>
+      <para>The reference pages list all OpenGL functions.</para>
+      
+      <refentry xml:id="glGenBuffers">
+        <refnamediv>
+          <refname>glGenBuffers</refname>
+          <refpurpose>generate buffer object names</refpurpose>
+        </refnamediv>
+
+        <refsynopsisdiv>
+          <funcsynopsis>
+            <funcprototype>
+              <funcdef>void <function>glGenBuffers</function></funcdef>
+              <paramdef>GLsizei <parameter>n</parameter></paramdef>
+              <paramdef>GLuint * <parameter>buffers</parameter></paramdef>
+            </funcprototype>
+          </funcsynopsis>
+        </refsynopsisdiv>
+
+        <refsection>
+          <title>Parameters</title>
+          <variablelist>
+            <varlistentry>
+              <term>n</term>
+              <listitem><para>Specifies the number of buffer object names to be generated.</para></listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>buffers</term>
+              <listitem><para>Specifies an array in which the generated buffer object names are stored.</para></listitem>
+            </varlistentry>
+          </variablelist>
+        </refsection>
+
+        <refsection>
+          <title>Description</title>
+          <para><function>glGenBuffers</function> returns <parameter>n</parameter> buffer object names in <parameter>buffers</parameter>.
+            There is no guarantee that the names form a contiguous set of integers;
+            however, it is guaranteed that none of the returned names was in use
+            immediately before the call to <function>glGenBuffers</function>.</para>
+        </refsection>
+        
+      </refentry>
+    </reference>
+  </part>
+
   <!-- Appendix goes here -->
   <xi:include href="epilogues/appendix/DocBook.xml" />
 

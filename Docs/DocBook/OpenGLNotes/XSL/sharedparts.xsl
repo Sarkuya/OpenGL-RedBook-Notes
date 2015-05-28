@@ -4,6 +4,8 @@
   <xsl:param name="toc.section.depth">2</xsl:param>
 
   <xsl:param name="section.autolabel">1</xsl:param>
+  <xsl:param name="section.autolabel.max.depth">2</xsl:param>
+  
   <xsl:param name="section.label.includes.component.label">1</xsl:param>
 
   <xsl:param name="admon.graphics">1</xsl:param>
@@ -12,6 +14,9 @@
 
   <xsl:param name="refentry.generate.name">0</xsl:param>
   <xsl:param name="refentry.generate.title">1</xsl:param>
+
+  <xsl:param name="funcsynopsis.style">ansi</xsl:param>
+  <xsl:param name="funcsynopsis.decoration" select="1"></xsl:param>
 
   <xsl:param name="generate.toc">
     book toc,title,figure,table,example,equation
