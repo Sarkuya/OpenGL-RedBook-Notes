@@ -19,7 +19,7 @@ p {
 ul.itemizedlist li.listitem p,
 ol.orderedlist li.listitem p
  {
-    line-height: 2em;
+    line-height: 1.5em;
 }
 
 a {
@@ -83,6 +83,31 @@ div.itemizedlist ul.itemizedlist li {
 div.itemizedlist ul.itemizedlist li.listitem pre.programlisting {
     line-height: 1em;
 }
+
+li.listitem div.orderedlist {
+    margin-top: 1em;
+}
+
+div.toc {
+    margin-bottom: 2em;
+}
+
+div.toc dl dd {
+    margin-top: -1em;
+    margin-bottom: -1em;
+}
+
+div.toc dl dd dl dd {
+    margin-top: -1em;
+    margin-bottom: -1em;
+}
+
+div.toc dl dd dl dd dl dd {
+    margin-top: -1em;
+    margin-bottom: -1em;
+}
+
+
 
 div.variablelist {
     text-indent: 2em;
