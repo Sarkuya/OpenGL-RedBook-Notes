@@ -46,7 +46,16 @@ div.titlepage h2.subtitle:before {
 }
 
 div.toc {
-    text-indent: 2em;
+    /*text-indent: 2em;*/
+}
+
+div.toc p,
+div.list-of-examples p {
+    color: #0860A8;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+    font-size: 2em;
+    margin-bottom: -0.5em;
 }
 
 div.dedication div.titlepage h2.title,
@@ -154,7 +163,6 @@ pre.screen, div.screenshot {
 }
 
 ol.orderedlist, ol.procedure {
-    padding-left: 4em;
     margin-top: -1em;
 }
 
