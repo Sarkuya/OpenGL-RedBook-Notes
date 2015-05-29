@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<refsection xmlns="http://docbook.org/ns/docbook"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Copyright</title>
+  <para>
+    Copyright <trademark class="copyright"/> 2005 Addison-Wesley. Copyright <trademark class="copyright"/> 2010-2014 Khronos Group. This material may be distributed subject to the terms and conditions set forth in the Open Publication License, v 1.0, 8 June 1999. <link xlink:href="http://opencontent.org/openpub/">http://opencontent.org/openpub/</link>.
+  </para>
+</refsection>

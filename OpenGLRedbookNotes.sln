@@ -125,6 +125,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "appendix", "appendix", "{11
 		Docs\DocBook\OpenGLNotes\Content\epilogues\appendix\DocBook.xml = Docs\DocBook\OpenGLNotes\Content\epilogues\appendix\DocBook.xml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "references", "references", "{0D7A9374-1ABD-4367-9F6D-654113F2D4C1}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\OpenGLNotes\Content\references\apifunchead.xml = Docs\DocBook\OpenGLNotes\Content\references\apifunchead.xml
+		Docs\DocBook\OpenGLNotes\Content\references\apiversion.xml = Docs\DocBook\OpenGLNotes\Content\references\apiversion.xml
+		Docs\DocBook\OpenGLNotes\Content\references\glGenBuffers.xml = Docs\DocBook\OpenGLNotes\Content\references\glGenBuffers.xml
+		Docs\DocBook\OpenGLNotes\Content\references\khronoscopyright.xml = Docs\DocBook\OpenGLNotes\Content\references\khronoscopyright.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -180,5 +188,6 @@ Global
 		{17FD8FA7-BD6A-479D-BEDF-FF234ECA3299} = {88CFDB23-43C4-4D44-942A-E3661D1338AB}
 		{BB249CA4-AE19-4758-A029-266416E21761} = {88CFDB23-43C4-4D44-942A-E3661D1338AB}
 		{1180839F-BB9B-4262-947C-28B2F588BB96} = {BB249CA4-AE19-4758-A029-266416E21761}
+		{0D7A9374-1ABD-4367-9F6D-654113F2D4C1} = {88CFDB23-43C4-4D44-942A-E3661D1338AB}
 	EndGlobalSection
 EndGlobal
