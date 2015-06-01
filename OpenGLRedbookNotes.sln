@@ -123,6 +123,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "appendix", "appendix", "{1180839F-BB9B-4262-947C-28B2F588BB96}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\DocBook\OpenGLNotes\Content\epilogues\appendix\DocBook.xml = Docs\DocBook\OpenGLNotes\Content\epilogues\appendix\DocBook.xml
+		Docs\DocBook\OpenGLNotes\Content\epilogues\appendix\XSL.xml = Docs\DocBook\OpenGLNotes\Content\epilogues\appendix\XSL.xml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "references", "references", "{0D7A9374-1ABD-4367-9F6D-654113F2D4C1}"
@@ -131,6 +132,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "references", "references", 
 		Docs\DocBook\OpenGLNotes\Content\references\apiversion.xml = Docs\DocBook\OpenGLNotes\Content\references\apiversion.xml
 		Docs\DocBook\OpenGLNotes\Content\references\glGenBuffers.xml = Docs\DocBook\OpenGLNotes\Content\references\glGenBuffers.xml
 		Docs\DocBook\OpenGLNotes\Content\references\khronoscopyright.xml = Docs\DocBook\OpenGLNotes\Content\references\khronoscopyright.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "etc", "etc", "{E0422AB6-4EA1-4F96-AF05-258AC8729B17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tmp", "tmp", "{144F1D5C-216D-4119-8CFA-9B804BE76192}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xsl", "xsl", "{890DE47B-D4FF-4F99-8DB5-6C32891F69C1}"
+	ProjectSection(SolutionItems) = preProject
+		etc\tmp\xsl\BooksCollection.xml = etc\tmp\xsl\BooksCollection.xml
 	EndProjectSection
 EndProject
 Global
@@ -189,5 +199,7 @@ Global
 		{BB249CA4-AE19-4758-A029-266416E21761} = {88CFDB23-43C4-4D44-942A-E3661D1338AB}
 		{1180839F-BB9B-4262-947C-28B2F588BB96} = {BB249CA4-AE19-4758-A029-266416E21761}
 		{0D7A9374-1ABD-4367-9F6D-654113F2D4C1} = {88CFDB23-43C4-4D44-942A-E3661D1338AB}
+		{144F1D5C-216D-4119-8CFA-9B804BE76192} = {E0422AB6-4EA1-4F96-AF05-258AC8729B17}
+		{890DE47B-D4FF-4F99-8DB5-6C32891F69C1} = {144F1D5C-216D-4119-8CFA-9B804BE76192}
 	EndGlobalSection
 EndGlobal

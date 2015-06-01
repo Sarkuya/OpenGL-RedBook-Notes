@@ -49,6 +49,7 @@
 
   <!-- Appendix goes here -->
   <xi:include href="epilogues/appendix/DocBook.xml" />
+  <xi:include href="epilogues/appendix/XSL.xml" />
 
   <index />
 

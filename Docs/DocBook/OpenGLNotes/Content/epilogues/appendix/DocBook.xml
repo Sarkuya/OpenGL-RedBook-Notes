@@ -22,6 +22,43 @@
   </section>
 
   <section>
+    <title>DocBook Daily Snippets</title>
+    <para>Copy and paste the following DocBook snippets when writing DocBook documents.</para>
+
+    <section>
+      <title>section</title>
+      <programlisting><![CDATA[
+<section>
+  <title></title>
+  <para></para>
+</section>
+]]></programlisting>
+    </section>
+
+    <section>
+      <title>programlisting</title>
+      <programlisting>&lt;programlisting&gt;&lt;![CDATA[
+&lt;!-- Contents goes here --&gt;
+]]&gt;&lt;/programlisting&gt;
+</programlisting>
+    </section>
+
+    <section>
+      <title>orderedlist</title>
+      <programlisting><![CDATA[
+<orderedlist>
+  <listitem><para>AAA, aaa.com: <link xlink:href="http://www.aaa.com" /></para></listitem>
+  <listitem><para>AAA, aaa.com: <link xlink:href="http://www.aaa.com" /></para></listitem>
+  <listitem><para>AAA, aaa.com: <link xlink:href="http://www.aaa.com" /></para></listitem>
+</orderedlist>
+]]></programlisting>
+    </section>
+
+
+
+  </section>
+
+  <section>
     <title>References</title>
     <orderedlist>
       <listitem><para>DocBook 5.1: The Definitive Guide, docbook.org: <link xlink:href="http://www.docbook.org/tdg51/en/html/docbook.html" /></para></listitem>

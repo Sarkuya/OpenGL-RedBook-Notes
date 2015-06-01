@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+  <book>
+    <title>C++ Programming Guide</title>
+    <author>Sam</author>
+    <price>50</price>
+  </book>
+
+  <book>
+    <title>OpenGL Distrilled</title>
+    <author>Mike</author>
+    <price>85</price>
+  </book>
+
+  <book>
+    <title>HTML The Best Guide</title>
+    <author>Simon</author>
+    <price>39</price>
+  </book>
+
+  <book>
+    <title>How to Write</title>
+    <author>Smith</author>
+    <price>66</price>
+  </book>
+</books>

@@ -207,10 +207,100 @@ table.graybox th {
     background-color: #496291;
 }
 
+table.graybox tr.oddrow {
+    color: #3A4F90;
+    background-color: white;
+}
 
+table.graybox tr.evenrow {
+    color: #3A4F90;
+    background-color: #EFF4F5;
+}
 
+table thead tr.headerrow,
+table tbody td.headerrow,
+table tbody td.headercol {
+    color: #EEE;
+    background-color: #496291;
+    font-weight: bold;
+    text-align: center;
+}
 
+table tbody td.noverticalborder {
+    border-top: none;
+    border-bottom: none;
+}
 
+table tbody td.notopborder {
+    border-top: none;
+}
+
+table tbody td.nobottomborder {
+    border-bottom: none;
+}
+
+table tbody td.noborderbuttop {
+    border: none;
+    border-top: solid 1px gray;
+}
+
+table tbody td.noborderbutbottom {
+    border: none;
+    border-bottom: solid 1px gray;
+}
+
+table tbody td.noborder {
+    border: none;
+}
+
+table tr.oddrow {
+    color: #3A4F90;
+    background-color: white;
+}
+
+table tr.evenrow {
+    color: #3A4F90;
+    background-color: #EFF4F5;
+}
+
+tr.whitecolorrow {
+    color:#FFF;
+}
+
+tr.blackcolorrow {
+    color: #000;
+}
+
+table[summary="Note"] {
+    border-left: 5px solid mediumorchid !important;
+}
+
+table[summary="Warning"] {
+    border-left: 5px solid red !important;
+}
+
+table[summary="Tip"] {
+    border-left: 5px solid khaki !important;
+}
+
+span.emphasis em,
+span.token,
+dl dt span.term {
+    font-weight: bold;
+}
+
+span.token {
+    color: hotpink;
+}
+
+span.citation {
+    color: red;
+    font-weight: bold;
+}
+
+span.type {
+    font-weight: bold;
+}
 
 
 .navheader {
