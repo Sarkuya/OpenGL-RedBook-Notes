@@ -141,6 +141,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xsl", "xsl", "{890DE47B-D4FF-4F99-8DB5-6C32891F69C1}"
 	ProjectSection(SolutionItems) = preProject
 		etc\tmp\xsl\BooksCollection.xml = etc\tmp\xsl\BooksCollection.xml
+		etc\tmp\xsl\BooksCollection.xsl = etc\tmp\xsl\BooksCollection.xsl
+		etc\tmp\xsl\ConvertXML.sh = etc\tmp\xsl\ConvertXML.sh
 	EndProjectSection
 EndProject
 Global

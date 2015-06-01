@@ -414,6 +414,8 @@ Line endings are different in Unix and Windows. In order to create a shell scrip
 
 3.  Type
 
+        [Enter]
+        [Enter]
         Ctrl + D
 
     to end the typing and close the file.

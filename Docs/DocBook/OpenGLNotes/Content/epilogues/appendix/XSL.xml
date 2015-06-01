@@ -13,6 +13,7 @@
     <title>References</title>
     <orderedlist>
       <listitem><para>XSL Transformations (XSLT) Specification, Version 1.0, w3.org: <link xlink:href="http://www.w3.org/TR/1999/WD-xslt-19990421/" /></para></listitem>
+      <listitem><para>XSL Tutorial, Version 1.0, w3school.com.cn: <link xlink:href="http://www.w3school.com.cn/xsl/index.asp" /></para></listitem>
     </orderedlist>
   </section>
 </appendix>

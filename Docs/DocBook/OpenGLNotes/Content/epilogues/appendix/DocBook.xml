@@ -38,7 +38,7 @@
     <section>
       <title>programlisting</title>
       <programlisting>&lt;programlisting&gt;&lt;![CDATA[
-&lt;!-- Contents goes here --&gt;
+
 ]]&gt;&lt;/programlisting&gt;
 </programlisting>
     </section>
