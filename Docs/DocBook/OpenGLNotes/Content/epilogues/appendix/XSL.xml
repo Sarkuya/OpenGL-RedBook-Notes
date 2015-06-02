@@ -17,6 +17,7 @@
       <listitem><para>XSL Tutorial, Version 1.0, w3school.com.cn: <link xlink:href="http://www.w3school.com.cn/xsl/index.asp" /></para></listitem>
       <listitem><para>XSL Namespace Problem, stackoverflow.com: <link xlink:href="http://stackoverflow.com/questions/1859839/xsl-msxslnode-set-problem/1862886" /></para></listitem>
       <listitem><para>XSL - copy elements but remove unused namespace(s), stackoverflow.com: <link xlink:href="http://stackoverflow.com/questions/1074767/xsl-copy-elements-but-remove-unused-namespaces" /></para></listitem>
+      <listitem><para>Stay on the XPath, ibm.com: <link xlink:href="http://www.ibm.com/developerworks/library/x-xpath5tips/" /></para></listitem>
     </orderedlist>
   </section>
 </appendix>
