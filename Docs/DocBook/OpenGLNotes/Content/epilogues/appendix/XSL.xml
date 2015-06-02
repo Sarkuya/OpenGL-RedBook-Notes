@@ -12,8 +12,11 @@
   <section>
     <title>References</title>
     <orderedlist>
+      <listitem><para>XSL Transformations (XSLT) Specification, Current Version, w3.org: <link xlink:href="http://www.w3.org/TR/xslt" /></para></listitem>
       <listitem><para>XSL Transformations (XSLT) Specification, Version 1.0, w3.org: <link xlink:href="http://www.w3.org/TR/1999/WD-xslt-19990421/" /></para></listitem>
       <listitem><para>XSL Tutorial, Version 1.0, w3school.com.cn: <link xlink:href="http://www.w3school.com.cn/xsl/index.asp" /></para></listitem>
+      <listitem><para>XSL Namespace Problem, stackoverflow.com: <link xlink:href="http://stackoverflow.com/questions/1859839/xsl-msxslnode-set-problem/1862886" /></para></listitem>
+      <listitem><para>XSL - copy elements but remove unused namespace(s), stackoverflow.com: <link xlink:href="http://stackoverflow.com/questions/1074767/xsl-copy-elements-but-remove-unused-namespaces" /></para></listitem>
     </orderedlist>
   </section>
 </appendix>

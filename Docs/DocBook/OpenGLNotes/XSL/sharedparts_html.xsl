@@ -6,7 +6,7 @@
   <xsl:param name="html.stylesheet">css/style.css</xsl:param>
   <xsl:param name="admon.graphics.path">images/docbook/</xsl:param>
   <xsl:param name="callout.graphics.path">images/docbook/callouts/</xsl:param>
-  <xsl:param name="img.src.path">images/custom</xsl:param>
+  <xsl:param name="img.src.path">images/custom/</xsl:param>
 
   <xsl:param name="ulink.target">_new</xsl:param>
   

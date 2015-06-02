@@ -39,12 +39,10 @@
 
   <part>
     <title>References</title>
-    <reference>
-      <title>Reference Pages</title>
-      <para>The reference pages list all OpenGL functions.</para>
-      
-      <xi:include href="references/glGenBuffers.xml" />
-    </reference>
+    <partintro>
+      <para>The reference pages are the quick way to navigate the APIs.</para>
+    </partintro>
+    <xi:include href="references/OpenGLReferencePages.xml" />
   </part>
 
   <!-- Appendix goes here -->

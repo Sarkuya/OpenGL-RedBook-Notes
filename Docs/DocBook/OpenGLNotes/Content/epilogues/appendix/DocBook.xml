@@ -70,7 +70,6 @@
       <listitem><para>DocBook 5 快速起步教程, Sarkuya: <link xlink:href="http://blog.csdn.net/sarkuya/article/details/6854323" /></para></listitem>
       <listitem><para>Bibliography, sciencebuddies.org: <link xlink:href="http://www.sciencebuddies.org/science-fair-projects/project_bibliography.shtml" /></para></listitem>
       <listitem><para>Getting started/XML Toolchain and Man Page, opengl.org: <link xlink:href="https://www.opengl.org/wiki/Getting_started/XML_Toolchain_and_Man_Pages" /></para></listitem>
-      <listitem><para>OpenGL API Manual Source, opengl.org: <link xlink:href="https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/docs/man4/" /></para></listitem>
     </orderedlist>
   </section>
 </appendix>

@@ -29,4 +29,9 @@
     <title>The GNU Make Manual [EB/OL]. </title>
     <bibliosource class="uri">http://www.gnu.org/software/make/manual/</bibliosource>
   </bibliomixed>
+  
+  <bibliomixed xreflabel="OpenGL_Reference_Source">
+    <title>Source of OpenGL Reference Pages [EB/OL]. </title>
+    <bibliosource class="uri">https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/docs/man4/</bibliosource>
+  </bibliomixed>
 </bibliography>

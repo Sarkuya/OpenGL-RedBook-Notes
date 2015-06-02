@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<reference xmlns="http://docbook.org/ns/docbook"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>OpenGL V4.5 Reference Pages</title>
+  
+  <partintro>
+    <para>The reference pages in this section list all OpenGL functions.</para>
+  </partintro>
+  
+  <xi:include href="glGenBuffers.xml" />
+  
+</reference>
