@@ -11,6 +11,6 @@
   
   <xi:include href="glGenBuffers.xml" />
   <xi:include href="glBindBuffer.xml" />
-  <xi:include href="glDelteBuffers.xml" />
+  <xi:include href="glDeleteBuffers.xml" />
   
 </reference>

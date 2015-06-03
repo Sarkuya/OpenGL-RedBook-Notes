@@ -34,4 +34,14 @@
     <title>Source of OpenGL Reference Pages [EB/OL]. </title>
     <bibliosource class="uri">https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/docs/man4/</bibliosource>
   </bibliomixed>
+  
+  <bibliomixed xreflabel="15_Bash_Array_Tutorials">
+    <title>15 Bash Array Tutorials [EB/OL]. </title>
+    <bibliosource class="uri">http://blog.csdn.net/liufei_learning/article/details/8000570</bibliosource>
+  </bibliomixed>
+  
+  <bibliomixed xreflabel="Bash_While_Loop_Example">
+    <title>Bash While Loop Example [EB/OL]. </title>
+    <bibliosource class="uri">http://www.cyberciti.biz/faq/bash-while-loop/</bibliosource>
+  </bibliomixed>
 </bibliography>
