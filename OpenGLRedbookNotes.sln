@@ -130,6 +130,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "references", "references", 
 	ProjectSection(SolutionItems) = preProject
 		Docs\DocBook\OpenGLNotes\Content\references\apifunchead.xml = Docs\DocBook\OpenGLNotes\Content\references\apifunchead.xml
 		Docs\DocBook\OpenGLNotes\Content\references\apiversion.xml = Docs\DocBook\OpenGLNotes\Content\references\apiversion.xml
+		Docs\DocBook\OpenGLNotes\Content\references\glBindBuffer.xml = Docs\DocBook\OpenGLNotes\Content\references\glBindBuffer.xml
+		Docs\DocBook\OpenGLNotes\Content\references\glDeleteBuffers.xml = Docs\DocBook\OpenGLNotes\Content\references\glDeleteBuffers.xml
 		Docs\DocBook\OpenGLNotes\Content\references\glGenBuffers.xml = Docs\DocBook\OpenGLNotes\Content\references\glGenBuffers.xml
 		Docs\DocBook\OpenGLNotes\Content\references\khronoscopyright.xml = Docs\DocBook\OpenGLNotes\Content\references\khronoscopyright.xml
 		Docs\DocBook\OpenGLNotes\Content\references\OpenGLReferencePages.xml = Docs\DocBook\OpenGLNotes\Content\references\OpenGLReferencePages.xml
@@ -156,6 +158,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "convertglmanual", "convertg
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "glmansource", "glmansource", "{D91AD284-9FFC-41D4-9673-EC0959374133}"
 	ProjectSection(SolutionItems) = preProject
+		etc\utils\convertglmanual\glmansource\glBindBuffer.xml = etc\utils\convertglmanual\glmansource\glBindBuffer.xml
 		etc\utils\convertglmanual\glmansource\glGenBuffers.xml = etc\utils\convertglmanual\glmansource\glGenBuffers.xml
 	EndProjectSection
 EndProject

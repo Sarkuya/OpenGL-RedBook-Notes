@@ -14,13 +14,21 @@
 
   <xsl:param name="refentry.generate.name">0</xsl:param>
   <xsl:param name="refentry.generate.title">1</xsl:param>
+  <xsl:param name="citerefentry.link">1</xsl:param>
+  <xsl:param name="refentry.separator">1</xsl:param>
 
   <xsl:param name="funcsynopsis.style">ansi</xsl:param>
   <xsl:param name="funcsynopsis.decoration" select="1"></xsl:param>
+  <xsl:param name="function.parens" select="1"></xsl:param>
+  
+  
 
   <xsl:param name="generate.toc">
+    appendix toc,title
     book toc,title,figure,table,example,equation
+    chapter toc,title
     part toc,title
+    reference toc,title
   </xsl:param>
   
   <xsl:template match="table[@role = 'NotInToc']" mode="toc" />

@@ -189,3 +189,5 @@ _Pvt_Extensions/
 ModelManifest.xml
 /Docs/DocBook/*/Dist
 /etc/tmp/xsl/Dist
+/etc/utils/convertglmanual/glmansource/glGenBuffers_bak.xml
+/etc/utils/convertglmanual/Dist

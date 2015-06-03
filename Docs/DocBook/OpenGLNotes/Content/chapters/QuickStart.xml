@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xmlns="http://docbook.org/ns/docbook"
-      version="5.0"
-      xml:lang="en"
-      xml:id="Chapter_Quick_Start">
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xml:id="Chapter_Quick_Start">
 
   <title>OpenGL Quick Start</title>
   <para>We will start OpenGL programming in a quick way.</para>
@@ -191,6 +190,14 @@ int main(int argc, char** argv) {
   <section>
     <title>Triangles In Detail</title>
     
+  </section>
+  
+  <section>
+    <title>References</title>
+    <orderedlist>
+      <listitem><para>OpenGL 4.5 Reference Pages, opengl.org: <link xlink:href="https://www.opengl.org/sdk/docs/man/" /></para></listitem>
+      <listitem><para>OpenGL SDK Manual Source, opengl.org: <link xlink:href="https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/docs/man4/" /></para></listitem>
+    </orderedlist>
   </section>
 
 </chapter>

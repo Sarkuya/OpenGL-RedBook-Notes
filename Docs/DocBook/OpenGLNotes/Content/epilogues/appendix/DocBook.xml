@@ -27,8 +27,7 @@
 
     <section>
       <title>section</title>
-      <programlisting><![CDATA[
-<section>
+      <programlisting><![CDATA[<section>
   <title></title>
   <para></para>
 </section>
@@ -45,8 +44,7 @@
 
     <section>
       <title>orderedlist</title>
-      <programlisting><![CDATA[
-<orderedlist>
+      <programlisting><![CDATA[<orderedlist>
   <listitem><para>AAA, aaa.com: <link xlink:href="http://www.aaa.com" /></para></listitem>
   <listitem><para>AAA, aaa.com: <link xlink:href="http://www.aaa.com" /></para></listitem>
   <listitem><para>AAA, aaa.com: <link xlink:href="http://www.aaa.com" /></para></listitem>
@@ -66,8 +64,7 @@
       <listitem><para>DocBook V5.0: The Transition Guide, docbook.org: <link xlink:href="http://www.docbook.org/docs/howto/" /></para></listitem>
       <listitem><para>DocBook XSL: The Complete Guide (Fourth Edition), sagehill.net: <link xlink:href="http://www.sagehill.net/docbookxsl/index.html" /></para></listitem>
       <listitem><para>DocBook XSL Stylesheets: Reference Documentation, docbook.sourceforge.net: <link xlink:href="http://docbook.sourceforge.net/release/xsl/current/doc/index.html" /></para></listitem>
-      
-      <listitem><para>DocBook 5 快速起步教程, Sarkuya: <link xlink:href="http://blog.csdn.net/sarkuya/article/details/6854323" /></para></listitem>
+      <listitem><para xml:lang="zh_cn">DocBook 5 快速起步教程, Sarkuya: <link xlink:href="http://blog.csdn.net/sarkuya/article/details/6854323" /></para></listitem>
       <listitem><para>Bibliography, sciencebuddies.org: <link xlink:href="http://www.sciencebuddies.org/science-fair-projects/project_bibliography.shtml" /></para></listitem>
       <listitem><para>Getting started/XML Toolchain and Man Page, opengl.org: <link xlink:href="https://www.opengl.org/wiki/Getting_started/XML_Toolchain_and_Man_Pages" /></para></listitem>
     </orderedlist>

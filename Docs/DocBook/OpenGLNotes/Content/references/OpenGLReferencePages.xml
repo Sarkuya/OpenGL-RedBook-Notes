@@ -10,5 +10,7 @@
   </partintro>
   
   <xi:include href="glGenBuffers.xml" />
+  <xi:include href="glBindBuffer.xml" />
+  <xi:include href="glDelteBuffers.xml" />
   
 </reference>
