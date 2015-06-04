@@ -153,10 +153,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "convertglmanual", "convertg
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "glmansource", "glmansource", "{D91AD284-9FFC-41D4-9673-EC0959374133}"
 	ProjectSection(SolutionItems) = preProject
-		etc\utils\convertglmanual\glmansource\bufferbindings.xml = etc\utils\convertglmanual\glmansource\bufferbindings.xml
 		etc\utils\convertglmanual\glmansource\glBindBuffer.xml = etc\utils\convertglmanual\glmansource\glBindBuffer.xml
 		etc\utils\convertglmanual\glmansource\glDeleteBuffers.xml = etc\utils\convertglmanual\glmansource\glDeleteBuffers.xml
 		etc\utils\convertglmanual\glmansource\glGenBuffers.xml = etc\utils\convertglmanual\glmansource\glGenBuffers.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "included", "included", "{F39EA16A-1C9A-4792-AE7C-968EA81ECB7E}"
+	ProjectSection(SolutionItems) = preProject
+		etc\utils\convertglmanual\glmansource\included\apifunchead.xml = etc\utils\convertglmanual\glmansource\included\apifunchead.xml
+		etc\utils\convertglmanual\glmansource\included\apiversion.xml = etc\utils\convertglmanual\glmansource\included\apiversion.xml
+		etc\utils\convertglmanual\glmansource\included\bufferbindings.xml = etc\utils\convertglmanual\glmansource\included\bufferbindings.xml
 	EndProjectSection
 EndProject
 Global
@@ -220,5 +226,6 @@ Global
 		{48D8961F-CF26-4DE6-914A-D555BA519F5E} = {E0422AB6-4EA1-4F96-AF05-258AC8729B17}
 		{090F0C1B-25F5-4EAD-8554-AF5D63801ADD} = {48D8961F-CF26-4DE6-914A-D555BA519F5E}
 		{D91AD284-9FFC-41D4-9673-EC0959374133} = {090F0C1B-25F5-4EAD-8554-AF5D63801ADD}
+		{F39EA16A-1C9A-4792-AE7C-968EA81ECB7E} = {D91AD284-9FFC-41D4-9673-EC0959374133}
 	EndGlobalSection
 EndGlobal

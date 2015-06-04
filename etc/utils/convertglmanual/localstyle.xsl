@@ -14,11 +14,11 @@
   
   <xsl:template match="xi:include">
     <xsl:choose>
-      <xsl:when test="@href='bufferbindings.xml'">
+      <xsl:when test="@href='apifunchead.xml' or @href='apiversion.xml' or @href='bufferbindings.xml'">
         <xsl:copy>
           <xsl:apply-templates select="@*"/>
           <xsl:attribute name="href">
-            <xsl:value-of select="concat('included/khronos/', @href)" />
+            <xsl:value-of select="concat('included/', @href)" />
           </xsl:attribute>
         </xsl:copy>
       </xsl:when>

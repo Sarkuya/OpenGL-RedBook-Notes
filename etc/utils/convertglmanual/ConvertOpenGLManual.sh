@@ -5,6 +5,10 @@ export DIST_DIR="Dist"
 
 rm -r $DIST_DIR
 
+mkdir -p Dist/included
+
+cp -r glmansource/included Dist
+
 declare -a SourceFiles=(
 	glBindBuffer.xml glDeleteBuffers.xml glGenBuffers.xml
 )

@@ -427,6 +427,8 @@ Since we create the file in Cygwin shell, it's line endings would be Unix. And s
 
 If your are sure that the script are correct while you doesn't get the expected result, try this first.
 
+Another quick way is to set the save options. Click on menu File -> Advanced Save Optioins..., set the Line endings to Unix(LF). However, this way works only for a single specific file. It is great for shell script file running under Cygwin environment.
+
 ## Automation in Visual Studio ##
 
 After we can run the scripts in cygwin shell, we can go further to do automation in Visual Studio.
