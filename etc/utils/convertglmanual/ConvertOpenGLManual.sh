@@ -1,17 +1,24 @@
 
-rm -r ./Dist
+export XSL_STYLESHEET="localstyle.xsl"
+export SOURCE_DIR="glmansource"
+export DIST_DIR="Dist"
 
-declare -a SourceFiles=(glBindBuffer.xml glDeleteBuffers.xml glGenBuffers.xml)
-echo ${SourceFiles[0]}
-echo ${#SourceFiles[@]}
+rm -r $DIST_DIR
+
+declare -a SourceFiles=(
+	glBindBuffer.xml glDeleteBuffers.xml glGenBuffers.xml
+)
+
+# echo ${SourceFiles[0]}
+# echo ${#SourceFiles[@]}
 
 for f in ${SourceFiles[@]}
 do
-echo $f
+xsltproc --output $DIST_DIR/$f $XSL_STYLESHEET $SOURCE_DIR/$f
 done
 
-xsltproc --output ./Dist/ localstyle.xsl glmansource/glGenBuffers.xml
-xsltproc --output ./Dist/ localstyle.xsl glmansource/glBindBuffer.xml
-xsltproc --output ./Dist/ localstyle.xsl glmansource/glDeleteBuffers.xml
+
+
+
 
 

@@ -12,6 +12,22 @@
   <xsl:template match="db:info" />
   <xsl:template match="db:refsynopsisdiv/db:title" />
   
+  <xsl:template match="xi:include">
+    <xsl:choose>
+      <xsl:when test="@href='bufferbindings.xml'">
+        <xsl:copy>
+          <xsl:apply-templates select="@*"/>
+          <xsl:attribute name="href">
+            <xsl:value-of select="concat('included/khronos/', @href)" />
+          </xsl:attribute>
+        </xsl:copy>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:copy-of select="." />
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
   <xsl:template match="db:refsect1">
     <refsection>
       <xsl:apply-templates />
