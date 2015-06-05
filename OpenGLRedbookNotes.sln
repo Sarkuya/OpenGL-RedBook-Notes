@@ -165,6 +165,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "included", "included", "{F3
 		etc\utils\convertglmanual\glmansource\included\bufferbindings.xml = etc\utils\convertglmanual\glmansource\included\bufferbindings.xml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "converted", "converted", "{0E79FE72-6392-4B55-B670-322F5264E6E7}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\OpenGLNotes\Content\references\converted\glBindBuffer.xml = Docs\DocBook\OpenGLNotes\Content\references\converted\glBindBuffer.xml
+		Docs\DocBook\OpenGLNotes\Content\references\converted\glDeleteBuffers.xml = Docs\DocBook\OpenGLNotes\Content\references\converted\glDeleteBuffers.xml
+		Docs\DocBook\OpenGLNotes\Content\references\converted\glGenBuffers.xml = Docs\DocBook\OpenGLNotes\Content\references\converted\glGenBuffers.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -227,5 +234,6 @@ Global
 		{090F0C1B-25F5-4EAD-8554-AF5D63801ADD} = {48D8961F-CF26-4DE6-914A-D555BA519F5E}
 		{D91AD284-9FFC-41D4-9673-EC0959374133} = {090F0C1B-25F5-4EAD-8554-AF5D63801ADD}
 		{F39EA16A-1C9A-4792-AE7C-968EA81ECB7E} = {D91AD284-9FFC-41D4-9673-EC0959374133}
+		{0E79FE72-6392-4B55-B670-322F5264E6E7} = {0D7A9374-1ABD-4367-9F6D-654113F2D4C1}
 	EndGlobalSection
 EndGlobal
