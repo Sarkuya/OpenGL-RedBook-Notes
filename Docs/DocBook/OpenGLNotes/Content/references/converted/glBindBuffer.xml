@@ -29,7 +29,7 @@
                     bound, which must be one of the buffer binding targets
                     in the following table:
                 </para>
-                <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="bufferbindings.xml"/>
+                <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="included/bufferbindings.xml"/>
             </listitem>
         </varlistentry>
         <varlistentry>
@@ -228,11 +228,11 @@
     <refsection><title>Version Support</title>
         <informaltable>
             <tgroup cols="13" align="left">
-                <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="apifunchead.xml" xpointer="xpointer(/*/*)"/>
+                <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="included/apifunchead.xml" xpointer="xpointer(/*/*)"/>
                 <tbody>
                     <row>
                         <entry><function>glBindBuffer</function></entry>
-                        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="apiversion.xml" xpointer="xpointer(/*/*[@role='20']/*)"/>
+                        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="included/apiversion.xml" xpointer="xpointer(/*/*[@role='20']/*)"/>
                     </row>
                 </tbody>
             </tgroup>
@@ -250,5 +250,5 @@
             <citerefentry><refentrytitle>glIsBuffer</refentrytitle></citerefentry>
         </para>
     </refsection>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="khronoscopyright.xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="../khronoscopyright.xml"/>
 </refentry>

@@ -35,7 +35,7 @@
   </xsl:template>
   
   <xsl:template match="db:refsect1[@xml:id='Copyright']">
-    <xi:include href="khronoscopyright.xml" />
+    <xi:include href="../khronoscopyright.xml" />
   </xsl:template>
   
   <xsl:template match="@*|node()">

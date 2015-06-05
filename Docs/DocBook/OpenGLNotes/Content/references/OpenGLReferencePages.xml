@@ -9,8 +9,9 @@
     <para>The reference pages in this section list all OpenGL functions.</para>
   </partintro>
   
-  <xi:include href="glGenBuffers.xml" />
-  <xi:include href="glBindBuffer.xml" />
-  <xi:include href="glDeleteBuffers.xml" />
+  <xi:include href="converted/glBindBuffer.xml" />
+  <xi:include href="converted/glDeleteBuffers.xml" />
+  <xi:include href="converted/glGenBuffers.xml" />
+  <xi:include href="converted/glGet.xml" />
   
 </reference>

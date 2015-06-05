@@ -69,11 +69,11 @@
     <refsection><title>Version Support</title>
         <informaltable>
             <tgroup cols="13" align="left">
-                <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="apifunchead.xml" xpointer="xpointer(/*/*)"/>
+                <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="included/apifunchead.xml" xpointer="xpointer(/*/*)"/>
                 <tbody>
                     <row>
                         <entry><function>glGenBuffers</function></entry>
-                        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="apiversion.xml" xpointer="xpointer(/*/*[@role='20']/*)"/>
+                        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="included/apiversion.xml" xpointer="xpointer(/*/*[@role='20']/*)"/>
                     </row>
                 </tbody>
             </tgroup>
@@ -86,5 +86,5 @@
             <citerefentry><refentrytitle>glGet</refentrytitle></citerefentry>
         </para>
     </refsection>
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="khronoscopyright.xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="../khronoscopyright.xml"/>
 </refentry>

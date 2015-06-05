@@ -2,7 +2,7 @@
 XSL_FILE="localstyle.xsl"
 SOURCE_DIR="glmansource"
 SOURCE_FILES=()
-DIST_DIR="Dist"
+DIST_DIR="../../../Docs/DocBook/OpenGLNotes/Content/references/converted"
 INCLUDED_DIR="included"
 
 rm -r $DIST_DIR
@@ -23,5 +23,3 @@ for f in ${SOURCE_FILES[@]}
 do
 xsltproc --output $DIST_DIR/$f $XSL_FILE $SOURCE_DIR/$f
 done
-
-

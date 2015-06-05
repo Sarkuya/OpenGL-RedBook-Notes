@@ -51,9 +51,30 @@
 </orderedlist>
 ]]></programlisting>
     </section>
-
-
-
+  </section>
+  
+  <section>
+    <title>Aboute DocBook Generating in This Project</title>
+    <para>In DocBook OpenGLNotes, the reference pages are mainly converted from OpenGL official API manual. So, if you want the update the reference pages, follow the steps below: </para>
+    <procedure>
+      <title>Updating OpenGLNotes Reference Pages Procedure</title>
+      <step>
+        <para>Fetch the refernce man pages you need from <link xlink:href="https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/docs/man4/">OpenGL Man Source</link>.</para>
+        <para>There are two kinds of pages. One is those that will appear in toc. These files should be stored in <filename class="directory">etc/utils/convertglmanual/glmansource</filename>. The other is called included pages. These files should be store in <filename class="directory">etc/utils/convertglmanual/glmansource/included</filename>.</para>
+      </step>
+      <step>
+        <para>In Cygwin console, run the <filename>ConvertOpenGLManual.sh</filename> in <filename class="directory">etc/utils/convertglmanual</filename>.</para>
+        <para>This will convert and generate corresponding XML files in <filename class="directory">Docs/DocBook/OpenGLNotes/Content/references/converted</filename>.</para>
+      </step>
+      <step>
+        <para>Add the files in <filename>OpenGLReferencePages.xml</filename> in <filename class="directory">Docs/DocBook/OpenGLNotes/Content/references</filename>.</para>
+        <programlisting><![CDATA[<xi:include href="converted/FILE_NAME_1.xml" />
+<xi:include href="converted/FILE_NAME_2.xml" />
+...
+]]></programlisting>
+      </step>
+      <step><para>Run <filename>make</filename> in <filename class="directory">Docs/DocBook/OpenGLNotes</filename>.</para></step>
+    </procedure>
   </section>
 
   <section>
