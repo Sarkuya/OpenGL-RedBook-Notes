@@ -8,6 +8,8 @@
   <xsl:param name="chunker.output.encoding" select="'UTF-8'" />
   <xsl:param name="chunker.output.indent" select="'yes'" />
 
+  <xsl:param name="use.id.as.filename" select="'yes'" />
+
   <xsl:param name="navig.graphics" select="1" />
   <xsl:param name="navig.graphics.path" select="'images/docbook/'" />
 
