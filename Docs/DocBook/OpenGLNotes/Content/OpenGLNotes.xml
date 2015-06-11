@@ -37,6 +37,7 @@
     <xi:include href="chapters/QuickStart.xml" />
   </part>
 
+  <!--
   <part>
     <title>References</title>
     <partintro>
@@ -44,6 +45,7 @@
     </partintro>
     <xi:include href="references/OpenGLReferencePages.xml" />
   </part>
+  -->
 
   <!-- Appendix goes here -->
   <xi:include href="epilogues/appendix/DocBook.xml" />

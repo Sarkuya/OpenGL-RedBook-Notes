@@ -148,12 +148,19 @@ pre.programlisting, pre.synopsis, pre.screen, div.screenshot {
 pre.programlisting {
     background-color: #F9F9F9;
     border: 1px dashed #2F6FAB;
+    tab-size: 2;
+    font-size: small;
 }
 
-pre.synopsis {
-    background-color: #E0E0E0;
+pre.synopsis,
+div.funcsynopsis {
+    background-color: lightgoldenrodyellow;
     border-left: 5px solid limegreen;
     border-right: 5px solid limegreen;
+}
+
+div.funcsynopsis div.funcprototype-spacer {
+    display: none;
 }
 
 pre.screen, div.screenshot {
