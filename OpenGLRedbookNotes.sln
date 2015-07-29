@@ -181,6 +181,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "included", "included", "{B5
 		Docs\DocBook\OpenGLNotes\Content\references\converted\included\bufferbindings.xml = Docs\DocBook\OpenGLNotes\Content\references\converted\included\bufferbindings.xml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapters", "chapters", "{D94B9405-C2FF-4772-9D16-D5754644A264}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QuickStart", "QuickStart", "{F3DD7CE8-D5B9-4646-B2C9-799638F368C5}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\OpenGLNotes\Images\chapters\QuickStart\Triangles.png = Docs\DocBook\OpenGLNotes\Images\chapters\QuickStart\Triangles.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -245,5 +252,7 @@ Global
 		{F39EA16A-1C9A-4792-AE7C-968EA81ECB7E} = {D91AD284-9FFC-41D4-9673-EC0959374133}
 		{0E79FE72-6392-4B55-B670-322F5264E6E7} = {0D7A9374-1ABD-4367-9F6D-654113F2D4C1}
 		{B55A2992-6910-44C7-B747-D17E6EE0E96B} = {0E79FE72-6392-4B55-B670-322F5264E6E7}
+		{D94B9405-C2FF-4772-9D16-D5754644A264} = {EF94C597-698B-48BD-B844-FD43E9319297}
+		{F3DD7CE8-D5B9-4646-B2C9-799638F368C5} = {D94B9405-C2FF-4772-9D16-D5754644A264}
 	EndGlobalSection
 EndGlobal

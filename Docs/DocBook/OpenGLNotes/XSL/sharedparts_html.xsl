@@ -7,14 +7,16 @@
   <xsl:param name="admon.graphics.path">images/docbook/</xsl:param>
   <xsl:param name="callout.graphics.path">images/docbook/callouts/</xsl:param>
   <xsl:param name="img.src.path">images/custom/</xsl:param>
-
+  <xsl:param name="ignore.image.scaling">1</xsl:param>
+  
+  
   <xsl:param name="ulink.target">_new</xsl:param>
   
   <!--
   <xsl:param name="default.table.frame">border</xsl:param>
   -->
 
-  <xsl:param name="ignore.image.scaling">1</xsl:param>
+  
 
   <!--
   <xsl:param name="linenumbering.extension">1</xsl:param>

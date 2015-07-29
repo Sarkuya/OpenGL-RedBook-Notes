@@ -169,6 +169,7 @@
   <xsl:param name="admon.graphics.path">Dist/pdf/images/docbook/</xsl:param>
   <xsl:param name="callout.graphics.path">Dist/pdf/images/docbook/callouts/</xsl:param>
   <xsl:param name="draft.watermark.image">Dist/pdf/images/docbook/draft.png</xsl:param>
+  <xsl:param name="keep.relative.image.uris">1</xsl:param>
   <xsl:param name="img.src.path">Dist/pdf/images/custom/</xsl:param>
   
 </xsl:stylesheet>

@@ -185,6 +185,14 @@ int main(int argc, char** argv) {
 	glutMainLoop();
 }]]></programlisting>
     </example>
+    <para>Run the application, and the result is as below:</para>
+    
+    <figure>
+      <title>Triangles</title>
+      <imagedata fileref="chapters/QuickStart/Triangles.png" scalefit="1" width="100%" contentdepth="100%" />
+      <textobject><phrase>An illustration of The First OpenGL Application</phrase></textobject>
+    </figure>
+
   </section>
 
   <section>
@@ -328,16 +336,99 @@ void main() {
           <paramdef>GLsizei <parameter>count</parameter></paramdef>
         </funcprototype>
       </funcsynopsis>
-      <para><function>glDrawArrays</function> renders primitives using the array data from current VBO under current VAO. It uses count sequential elements, starting from first element, from each enabled array, to construct a sequence of primitives of type mode.</para>
-      <para></para>
-      <para></para>
-      <para></para>
-      <para></para>
-      <para></para>
-      <para></para>
-      <para></para>
-      <para></para>
+      <para><function>glDrawArrays</function> renders primitives using the array data from current VBO under current VAO. It uses <parameter>count</parameter> sequential elements, starting from <parameter>first</parameter> element, from each enabled array, to construct a sequence of primitives of type <parameter>mode</parameter>.</para>
+      <para>What does an element mean? Think about the vertex array below:</para>
+      <programlisting><![CDATA[GLfloat vertices[6][2] = {
+	{ -0.90, -0.90 },  // Triangle 1
+	{  0.85, -0.90 },
+	{ -0.90,  0.85 },
+	{  0.90, -0.85 },  // Triangle 2
+	{  0.90,  0.90 },
+	{ -0.85,  0.90 },
+};
+]]></programlisting>
+      <para>There are altogether 6 vertices, each vertex consists of a pair of {x, y} corordinate. Then each element in it is listed below:</para>
+      <programlisting><![CDATA[1. {-0.90, -0.90}
+2. { 0.85, -0.90}
+3. {-0.90,  0.85}
+4. { 0.90, -0.85}
+5. { 0.90,  0.90}
+6. {-0.85,  0.90}
+]]></programlisting>
+      <para>In this case, a vertex comprised of two components is a element. Then, we can easily figure out the role of each <function>glDrawArrays</function> below:</para>
+      <programlisting><![CDATA[glDrawArrays(GL_TRIANGLES, 0, 3)  // taking 3 elements, starting from the first element, to construct 1 triangle
+glDrawArrays(GL_TRIANGLES, 3, 3)  // taking 3 elements, starting from the third element, to construct 1 triangle
+glDrawArrays(GL_TRIANGLES, 0, 6)  // taking 6 elements, starting from the first element, to construct 2 triangles
+]]></programlisting>
+      <para>And as for:</para>
+      <programlisting><![CDATA[GLfloat vertex_info[] = {
+  -1.0f, -1.0f,         // first vertex position
+   1.0f,  0.0f,  0.0f,  // first vertex color
+
+   1.0f, -1.0f,         // second vertex position
+   0.0f,  1.0f,  0.0f,  // second vertex color
+
+   0.0f,  1.0f,         // third vertex position
+   0.0f,  0.0f,  1.0f   // third vertex color
+};
+]]></programlisting>
+      <para>There would be 2 enabled vertex attribute arrays. </para>
+      <programlisting><![CDATA[glEnableVertexAttribArray(0);
+glEnableVertexAttribArray(1);
+]]></programlisting>
+      <para>When constructing each element, OpenGL would fetch data from the position attribue array and color attribue array simutaneiously as below:</para>
+      <programlisting><![CDATA[         pos_attrib         color_attrib
+    1. {-1.0f, -1.0f}    {1.0f, 0.0f, 0.0f}
+    2. { 1.0f, -1.0f}    {0.0f, 1.0f, 0.0f}
+    3. { 0.0f,  1.0f}    {0.0f, 0.0f, 1.0f}
+]]></programlisting>
+      <para>That is, each element consists of both of position attribute and color attribute.</para>
+      <para>So, when we invoke</para>
+      <programlisting><![CDATA[glDrawArrays(GL_TRIANGLES, 0, 3);
+]]></programlisting>
+      <para>OpenGL will fetch 3 elments, starting from the first element, to construct a colored triangle.</para>
+      <para>Finally, <function>glFlush</function> flushes the previously issued commands in buffers to be executed by OpenGL server. It does <emphasis>not</emphasis> wait until the execution but rather return immediately.</para>
     </section>
+  </section>
+
+  <section>
+    <title>Exercieses</title>
+    <orderedlist>
+      <listitem>
+        <para>Using the vertex_info data structure above, draw a triangle with 3 colored vertex.</para>
+        <para>Hints: Almost all necessary steps are mentioned above, except shaders. And here are the shaders for it:</para>
+        <para><filename>vs.glsl</filename>:</para>
+        <programlisting><![CDATA[#version 430 core
+
+layout (location = 0) in vec4 vPosition;
+layout (location = 1) in vec4 vColor;
+
+out vec4 fs_color;
+
+void main() {
+	gl_Position = vPosition;
+	fs_color = vColor;
+}
+]]></programlisting>
+        <para><filename>fs.glsl</filename>:</para>
+        <programlisting><![CDATA[#version 430 core
+
+in vec4 fs_color;
+
+layout (location = 0) out vec4 color;
+
+void main() {
+	color = fs_color;
+}
+]]></programlisting>
+        <para>The key point here is that we convey vertex position and vertex color from application to vertex shader, and by using the <varname>in</varname> and <varname>out</varname> variables in *vs.glsl* and *fs.glsl*, the OpenGL conveys vertex color from *vs.glsl* to *fs.glsl*.</para>
+      </listitem>
+      <listitem>
+        <para>We combined both vertex position and veretex color in a array in veretex_info, and copy them to a VBO in a bundle. What approaches else can we take?</para>
+        <para>Can we use 2 arrays to define vertex position and vertex color separately, and copy both of them to a sole VBO?</para>
+        <para>Or even, after defining in 2 arrays, copy them separately to 2 VBOs? If so, how to use these 2 VBOs?</para>
+      </listitem>
+    </orderedlist>
   </section>
   
   <section>
