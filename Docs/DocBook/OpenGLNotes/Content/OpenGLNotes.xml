@@ -32,9 +32,11 @@
       <para>OpenGL fundermental concepts, background, skills.</para>
       <literallayout>
         <xref linkend="Chapter_Quick_Start" />
+        <xref linkend="Chapter_Drawing" />
       </literallayout>
     </partintro>
     <xi:include href="chapters/QuickStart.xml" />
+    <xi:include href="chapters/Drawing.xml" />
   </part>
 
   <!--

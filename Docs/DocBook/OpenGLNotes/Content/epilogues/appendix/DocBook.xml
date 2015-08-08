@@ -54,7 +54,7 @@
   </section>
   
   <section>
-    <title>Aboute DocBook Generating in This Project</title>
+    <title>About DocBook Generating in This Project</title>
     <para>In DocBook OpenGLNotes, the reference pages are mainly converted from OpenGL official API manual. So, if you want the update the reference pages, follow the steps below: </para>
     <procedure>
       <title>Updating OpenGLNotes Reference Pages Procedure</title>

@@ -16,9 +16,17 @@ p {
     line-height: 2em;
 }
 
+div.partintro div.literallayout {
+    margin-top: -2em;
+}
+
+div.partintro div.literallayout p {
+    line-height: 1.5em;
+}
+
 ul.itemizedlist li.listitem p,
 ol.orderedlist li.listitem p
- {
+{
     line-height: 1.5em;
 }
 
@@ -50,8 +58,10 @@ div.toc {
 }
 
 div.toc p,
-div.list-of-examples p,
-div.list-of-figures p {
+div.list-of-figures p,
+div.list-of-tables p,
+div.list-of-examples p
+ {
     color: #0860A8;
     font-family: Tahoma, Arial, Helvetica, sans-serif;
 	font-weight: bold;

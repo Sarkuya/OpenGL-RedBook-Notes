@@ -112,6 +112,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prologues", "prologues", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapters", "chapters", "{17FD8FA7-BD6A-479D-BEDF-FF234ECA3299}"
 	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\OpenGLNotes\Content\chapters\Drawing.xml = Docs\DocBook\OpenGLNotes\Content\chapters\Drawing.xml
 		Docs\DocBook\OpenGLNotes\Content\chapters\QuickStart.xml = Docs\DocBook\OpenGLNotes\Content\chapters\QuickStart.xml
 	EndProjectSection
 EndProject
