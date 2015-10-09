@@ -8,10 +8,8 @@ using namespace std;
 const int WINDOW_WIDTH = 500;
 const int WINDOW_HEIGHT = 500;
 
-GLuint    VAOs[1];
-GLuint Buffers[1];
-
-const GLuint NumVertices = 6;
+GLuint VAOs[2];
+GLuint VBOs[2];
 
 void centerWindow() {
 	glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -30,26 +28,37 @@ void compileShaders() {
 }
 
 void init(void) {
-	glGenVertexArrays(1, VAOs);
+	glGenVertexArrays(2, VAOs);
+	glGenBuffers(2, VBOs);
+
+	// first VAO
 	glBindVertexArray(VAOs[0]);
+	glBindBuffer(GL_ARRAY_BUFFER, VBOs[0]);
 
-	GLfloat vertices[NumVertices][2] = {
-		{ -0.90, -0.90 },  // Triangle 1
-		{ 0.85, -0.90 },
-		{ -0.90, 0.85 },
-		{ 0.90, -0.85 },  // Triangle 2
-		{ 0.90, 0.90 },
-		{ -0.85, 0.90 },
+	GLfloat triangleVertices[] = {
+		-0.9f, -0.3f,
+		-0.1f, -0.3f,
+		-0.5f,  0.3f
 	};
-
-	glGenBuffers(1, Buffers);
-	glBindBuffer(GL_ARRAY_BUFFER, Buffers[0]);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-	compileShaders();
-
+	glBufferData(GL_ARRAY_BUFFER, sizeof(triangleVertices), triangleVertices, GL_STATIC_DRAW);
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
 	glEnableVertexAttribArray(0);
+
+	// second VAO
+	glBindVertexArray(VAOs[1]);
+	glBindBuffer(GL_ARRAY_BUFFER, VBOs[1]);
+
+	GLfloat rectVertices[] = {
+		 0.2f,  0.3f,
+		 0.2f, -0.3f,
+		 0.8f,  0.3f,
+		 0.8f, -0.3f
+	};
+	glBufferData(GL_ARRAY_BUFFER, sizeof(rectVertices), rectVertices, GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
+	glEnableVertexAttribArray(0);
+
+	compileShaders();
 
 	glClearColor(1, 1, 1, 1);
 }
@@ -58,8 +67,10 @@ void display() {
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	glBindVertexArray(VAOs[0]);
-	glLineWidth(5.0f);
-	glDrawArrays(GL_LINE_LOOP, 0, NumVertices);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+
+	glBindVertexArray(VAOs[1]);
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
 	glFlush();
 }
@@ -71,22 +82,15 @@ int main(int argc, char** argv) {
 
 	centerWindow();
 
-	//glutInitContextVersion(3, 2);
+	//glutInitContextVersion(3, 1);
 	glutInitContextProfile(GLUT_CORE_PROFILE);
 
-	glutCreateWindow("Triangles");
+	glutCreateWindow("Two Figures");
 
 	if (glewInit() != GLEW_OK) {
 		cerr << "Unable to initialize GLEW ... exiting" << endl;
 		exit(EXIT_FAILURE);
 	}
-
-	//if (GLEW_VERSION_4_4) {
-	//	cout << "Your graphics hardware supports OpenGL 4.4!" << endl;
-	//}
-	//else if (GLEW_VERSION_3_3) {
-	//	cout << "Your graphics hardware supports OpenGL 3.3!" << endl;
-	//}
 
 	init();
 

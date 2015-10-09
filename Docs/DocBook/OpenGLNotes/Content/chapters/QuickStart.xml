@@ -186,11 +186,10 @@ int main(int argc, char** argv) {
 }]]></programlisting>
     </example>
     <para>Run the application, and the result is as below:</para>
-    
     <figure>
       <title>Triangles</title>
       <imagedata fileref="chapters/QuickStart/Triangles.png" scalefit="1" width="100%" contentdepth="100%" />
-      <textobject><phrase>An illustration of The First OpenGL Application</phrase></textobject>
+      <textobject><phrase>Render two triangles using one buffer</phrase></textobject>
     </figure>
 
   </section>
@@ -199,12 +198,7 @@ int main(int argc, char** argv) {
     <title>Triangles In Detail</title>
     <section>
       <title>What We Do in <function>init</function> Routine</title>
-      <orderedlist>
-        <listitem><para>Generate and bind a vertex array</para></listitem>
-        <listitem><para>Copy the data in vertex array to a buffer</para></listitem>
-        <listitem><para>Compile shaders</para></listitem>
-        <listitem><para>Tell the OpenGL how to use the buffer to feed to the shader</para></listitem>
-      </orderedlist>
+
     
       <section>
         <title>Creating and Binding a Vertex Array Object (VAO)</title>
@@ -240,7 +234,8 @@ int main(int argc, char** argv) {
             <paramdef>GLuint <parameter>buffer</parameter></paramdef>
           </funcprototype>
         </funcsynopsis>
-        <para>We need to set up data in a VBO associated with current VAO. With parameter target specified with <constant>GL_ARRAY_BUFFER</constant>, <function>glBindBuffer</function> creates a new VBO and set it as current VBO.</para>
+        <para>We need to set up data in a VBO associated with current VAO. <function>glGenBuffers</function> applies for new buffer names. With parameter target specified with <constant>GL_ARRAY_BUFFER</constant>, <function>glBindBuffer</function> creates a new VBO and set it as current VBO.</para>
+        <para>It is until the first binding that the buffer objects would be created.</para>
         <funcsynopsis>
           <funcprototype>
             <funcdef>void <function>glBufferData</function></funcdef>
@@ -251,6 +246,11 @@ int main(int argc, char** argv) {
           </funcprototype>
         </funcsynopsis>
         <para><function>glBufferData</function> populates current VBO with parameter <parameter>data</parameter>.</para>
+        <figure>
+          <title>NDC (Normalized Device Coordinate)</title>
+          <imagedata fileref="chapters/QuickStart/NDC.png" scalefit="1" width="100%" contentdepth="100%" />
+          <textobject><phrase>A familiar coordinate system</phrase></textobject>
+        </figure>
       </section>
     
       <section>
@@ -389,8 +389,173 @@ glEnableVertexAttribArray(1);
       <para>OpenGL will fetch 3 elments, starting from the first element, to construct a colored triangle.</para>
       <para>Finally, <function>glFlush</function> flushes the previously issued commands in buffers to be executed by OpenGL server. It does <emphasis>not</emphasis> wait until the execution but rather return immediately.</para>
     </section>
+  
+    <section>
+      <title>Procedure of Rendering in OpenGL Way</title>
+      <para>In sum, we need do the following to draw something in OpenGL:</para>
+      <orderedlist>
+        <listitem><para>Generate and bind a vertex array</para></listitem>
+        <listitem><para>Copy the data in vertex array to a buffer</para></listitem>
+        <listitem><para>Compile shaders</para></listitem>
+        <listitem><para>Tell the OpenGL how to use the buffer to feed to the shader</para></listitem>
+        <listitem><para>Render the image</para></listitem>
+      </orderedlist>
+    </section>
+  
+  </section>
+  
+  <section>
+    <title>Two Figures</title>
+    <programlisting><![CDATA[GLuint VAOs[2];
+GLuint VBOs[2];
+
+void init(void) {
+	glGenVertexArrays(2, VAOs);
+	glGenBuffers(2, VBOs);
+
+	// first VAO
+	glBindVertexArray(VAOs[0]);
+	glBindBuffer(GL_ARRAY_BUFFER, VBOs[0]);
+
+	GLfloat triangleVertices[] = {
+		-0.9f, -0.3f,
+		-0.1f, -0.3f,
+		-0.5f,  0.3f
+	};
+	glBufferData(GL_ARRAY_BUFFER, sizeof(triangleVertices), triangleVertices, GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
+	glEnableVertexAttribArray(0);
+
+	// second VAO
+	glBindVertexArray(VAOs[1]);
+	glBindBuffer(GL_ARRAY_BUFFER, VBOs[1]);
+
+	GLfloat rectVertices[] = {
+		 0.2f,  0.3f,
+		 0.2f, -0.3f,
+		 0.8f,  0.3f,
+		 0.8f, -0.3f
+	};
+	glBufferData(GL_ARRAY_BUFFER, sizeof(rectVertices), rectVertices, GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
+	glEnableVertexAttribArray(0);
+
+	compileShaders();
+
+	glClearColor(1, 1, 1, 1);
+}
+
+void display() {
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	glBindVertexArray(VAOs[0]);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+
+	glBindVertexArray(VAOs[1]);
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+
+	glFlush();
+}
+]]></programlisting>
+    <para>The shaders are the same with previous example.</para>
+    <para>Run the program, and the following window should appear:</para>
+    <figure>
+      <title>Two Figures</title>
+      <imagedata fileref="chapters/QuickStart/TwoFigures.png" scalefit="1" width="100%" contentdepth="100%" />
+      <textobject><phrase>Render two different figures using two buffers</phrase></textobject>
+    </figure>
+    <para>The main idea is, for each VAO, we do the following steps:</para>
+    <orderedlist>
+      <listitem><para>glBindVertexArray</para></listitem>
+      <listitem><para>glBindBuffer</para></listitem>
+      <listitem><para>glBufferData</para></listitem>
+      <listitem><para>glVertexAttribPointer</para></listitem>
+      <listitem><para>glEnableVertexAttribArray</para></listitem>
+    </orderedlist>
+    <para>Once we bind to a certain vertex array as the current one, the functons of procedure 2 to 5 would affect the current vertex array's state.</para>
+    <para>And in rendering procedure, we rebind each vertex array as the current vertex array, then render the image directly.</para>
   </section>
 
+  <section>
+    <title>Two Colored Figures</title>
+    <para>vs.glsl:</para>
+    <programlisting><![CDATA[#version 430 core
+
+layout (location = 0) in vec4 vPosition;
+layout (location = 1) in vec4 vColor;
+
+out vec4 fsColor;
+
+void main() {
+	gl_Position = vPosition;
+	fsColor = vColor;
+}
+]]></programlisting>
+    <para>fs.glsl:</para>
+    <programlisting><![CDATA[#version 430 core
+
+in vec4 fsColor;
+out vec4 color;
+
+void main() {
+	color = fsColor;
+}
+]]></programlisting>
+    <para>TwoColoredFigures.cpp:</para>
+    <programlisting><![CDATA[void init(void) {
+	glGenVertexArrays(2, VAOs);
+	glGenBuffers(2, VBOs);
+
+	// first VAO
+	glBindVertexArray(VAOs[0]);
+	glBindBuffer(GL_ARRAY_BUFFER, VBOs[0]);
+
+	GLfloat triangle[] = {
+		-0.9f, -0.3f,
+			1.0f, 0.0f, 0.0f,
+		-0.1f, -0.3f,
+			0.0f, 1.0f, 0.0f,
+		-0.5f, 0.3f,
+			0.0f, 0.0f, 1.0f
+	};
+	glBufferData(GL_ARRAY_BUFFER, sizeof(triangle), triangle, GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 5, BUFFER_OFFSET(0));
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 5, BUFFER_OFFSET(sizeof(GL_FLOAT) * 2));
+	glEnableVertexAttribArray(0);
+	glEnableVertexAttribArray(1);
+
+	// second VAO
+	glBindVertexArray(VAOs[1]);
+	glBindBuffer(GL_ARRAY_BUFFER, VBOs[1]);
+
+	GLfloat rect[] = {
+		0.2f, 0.3f,
+			1.0f, 0.0f, 0.0f,
+		0.2f, -0.3f,
+			0.0f, 1.0f, 0.0f,
+		0.8f, 0.3f,
+			0.0f, 0.0f, 1.0f,
+		0.8f, -0.3f,
+			1.0f, 0.5f, 0.8f
+	};
+	glBufferData(GL_ARRAY_BUFFER, sizeof(rect), rect, GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 5, BUFFER_OFFSET(0));
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 5, BUFFER_OFFSET(sizeof(GL_FLOAT) * 2));
+	glEnableVertexAttribArray(0);
+	glEnableVertexAttribArray(1);
+
+	compileShaders();
+
+	glClearColor(1, 1, 1, 1);
+}
+]]></programlisting>
+    <figure>
+      <title>Two Colored Figures</title>
+      <imagedata fileref="chapters/QuickStart/TwoColoredFigures.png" scalefit="1" width="100%" contentdepth="100%" />
+      <textobject><phrase>Render two colored figures</phrase></textobject>
+    </figure>
+  </section>
+  
   <section>
     <title>Exercieses</title>
     <orderedlist>
@@ -430,6 +595,8 @@ void main() {
       </listitem>
     </orderedlist>
   </section>
+  
+
   
   <section>
     <title>References</title>

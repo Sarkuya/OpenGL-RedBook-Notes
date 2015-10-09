@@ -118,6 +118,11 @@
   </section>
   
   <section>
+    <title>Drawing Elements</title>
+    <para>When we define vertex array, some vertices might be shared by multiple triangles.</para>
+    <para></para>
+  </section>
+  <section>
     <title>References</title>
     <orderedlist>
       <listitem><para>abc, abc.org: <link xlink:href="https://www.opengl.org/sdk/docs/man/" /></para></listitem>

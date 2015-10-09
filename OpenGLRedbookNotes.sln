@@ -112,8 +112,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prologues", "prologues", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapters", "chapters", "{17FD8FA7-BD6A-479D-BEDF-FF234ECA3299}"
 	ProjectSection(SolutionItems) = preProject
+		Docs\DocBook\OpenGLNotes\Content\chapters\3DBox.xml = Docs\DocBook\OpenGLNotes\Content\chapters\3DBox.xml
 		Docs\DocBook\OpenGLNotes\Content\chapters\Drawing.xml = Docs\DocBook\OpenGLNotes\Content\chapters\Drawing.xml
 		Docs\DocBook\OpenGLNotes\Content\chapters\QuickStart.xml = Docs\DocBook\OpenGLNotes\Content\chapters\QuickStart.xml
+		Docs\DocBook\OpenGLNotes\Content\chapters\ViewingTransforms.xml = Docs\DocBook\OpenGLNotes\Content\chapters\ViewingTransforms.xml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "epilogues", "epilogues", "{BB249CA4-AE19-4758-A029-266416E21761}"
@@ -189,6 +191,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QuickStart", "QuickStart", 
 		Docs\DocBook\OpenGLNotes\Images\chapters\QuickStart\Triangles.png = Docs\DocBook\OpenGLNotes\Images\chapters\QuickStart\Triangles.png
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TwoFigures", "Chap_01\TwoFigures\TwoFigures.vcxproj", "{CA236C81-F86B-4293-A9A3-1FCDAE20B8B2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TwoColoredFigures", "Chap_01\TwoColoredFigures\TwoColoredFigures.vcxproj", "{394D4127-BED5-4096-BF78-7C5ACC0DBE76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chap_02", "Chap_02", "{751A6F14-B4CA-4853-B6F2-06156040747E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ViewingTransforms", "Chap_02\ViewingTransforms\ViewingTransforms.vcxproj", "{4426E98D-8EC5-4DFE-B9B7-D716877F2ECC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3DBox", "Chap_03\3DBox\3DBox.vcxproj", "{68C85D1E-1F3A-47D7-A31E-8B87A8122729}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "canvasdrawing", "canvasdrawing", "{22C5C104-08AC-461C-A2FD-B015B7D6C178}"
+	ProjectSection(SolutionItems) = preProject
+		etc\utils\canvasdrawing\OpenGLCoordinates.html = etc\utils\canvasdrawing\OpenGLCoordinates.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -215,6 +232,22 @@ Global
 		{4D61D8B2-EC8A-4182-8B2A-9CDA485B2BC6}.Debug|Win32.Build.0 = Debug|Win32
 		{4D61D8B2-EC8A-4182-8B2A-9CDA485B2BC6}.Release|Win32.ActiveCfg = Release|Win32
 		{4D61D8B2-EC8A-4182-8B2A-9CDA485B2BC6}.Release|Win32.Build.0 = Release|Win32
+		{CA236C81-F86B-4293-A9A3-1FCDAE20B8B2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CA236C81-F86B-4293-A9A3-1FCDAE20B8B2}.Debug|Win32.Build.0 = Debug|Win32
+		{CA236C81-F86B-4293-A9A3-1FCDAE20B8B2}.Release|Win32.ActiveCfg = Release|Win32
+		{CA236C81-F86B-4293-A9A3-1FCDAE20B8B2}.Release|Win32.Build.0 = Release|Win32
+		{394D4127-BED5-4096-BF78-7C5ACC0DBE76}.Debug|Win32.ActiveCfg = Debug|Win32
+		{394D4127-BED5-4096-BF78-7C5ACC0DBE76}.Debug|Win32.Build.0 = Debug|Win32
+		{394D4127-BED5-4096-BF78-7C5ACC0DBE76}.Release|Win32.ActiveCfg = Release|Win32
+		{394D4127-BED5-4096-BF78-7C5ACC0DBE76}.Release|Win32.Build.0 = Release|Win32
+		{4426E98D-8EC5-4DFE-B9B7-D716877F2ECC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4426E98D-8EC5-4DFE-B9B7-D716877F2ECC}.Debug|Win32.Build.0 = Debug|Win32
+		{4426E98D-8EC5-4DFE-B9B7-D716877F2ECC}.Release|Win32.ActiveCfg = Release|Win32
+		{4426E98D-8EC5-4DFE-B9B7-D716877F2ECC}.Release|Win32.Build.0 = Release|Win32
+		{68C85D1E-1F3A-47D7-A31E-8B87A8122729}.Debug|Win32.ActiveCfg = Debug|Win32
+		{68C85D1E-1F3A-47D7-A31E-8B87A8122729}.Debug|Win32.Build.0 = Debug|Win32
+		{68C85D1E-1F3A-47D7-A31E-8B87A8122729}.Release|Win32.ActiveCfg = Release|Win32
+		{68C85D1E-1F3A-47D7-A31E-8B87A8122729}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -255,5 +288,10 @@ Global
 		{B55A2992-6910-44C7-B747-D17E6EE0E96B} = {0E79FE72-6392-4B55-B670-322F5264E6E7}
 		{D94B9405-C2FF-4772-9D16-D5754644A264} = {EF94C597-698B-48BD-B844-FD43E9319297}
 		{F3DD7CE8-D5B9-4646-B2C9-799638F368C5} = {D94B9405-C2FF-4772-9D16-D5754644A264}
+		{CA236C81-F86B-4293-A9A3-1FCDAE20B8B2} = {D95043DA-03EC-4E52-BA19-18C1A539B59A}
+		{394D4127-BED5-4096-BF78-7C5ACC0DBE76} = {D95043DA-03EC-4E52-BA19-18C1A539B59A}
+		{4426E98D-8EC5-4DFE-B9B7-D716877F2ECC} = {751A6F14-B4CA-4853-B6F2-06156040747E}
+		{68C85D1E-1F3A-47D7-A31E-8B87A8122729} = {DCAACDBD-F530-4D8E-99A0-5916DD436EC6}
+		{22C5C104-08AC-461C-A2FD-B015B7D6C178} = {48D8961F-CF26-4DE6-914A-D555BA519F5E}
 	EndGlobalSection
 EndGlobal

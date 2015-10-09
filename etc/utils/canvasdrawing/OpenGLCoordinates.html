@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>OpenGL Coordinates System</title>
+        
+        <style type="text/css">
+            canvas {
+                //border: 1px solid black;
+            }
+        </style>
+        
+        <script type="text/javascript">
+            var canvas, ctx;
+            
+            const PAGE_PADDING = 10;
+            
+            const MARK_HALF_HEIGHT = 3;
+            const MARK_HEIGHT = MARK_HALF_HEIGHT * 2;
+            
+            const MARKS_AT_HALF_AXIS = 10;
+            const MARKS_AT_AXIS = MARKS_AT_HALF_AXIS * 2;
+            
+            function init() {
+                canvas = document.getElementById("coordinateCanvas");
+                
+                if (!canvas.getContext) {
+                    alert("Error while getting canvas context.");
+                    return;
+                }
+                
+                ctx = canvas.getContext("2d");
+                
+                drawXAxis(true);
+                drawYAxis(true);
+                drawNDC();
+            }
+                
+            function drawXAxis (isDrawMarks) {
+                var path = new Path2D();
+
+                path.moveTo(PAGE_PADDING, canvas.height/2);
+                path.lineTo(canvas.width - PAGE_PADDING, canvas.height/2);
+
+                if (isDrawMarks) {
+                    var x = PAGE_PADDING;
+                    var y = canvas.height/2 - MARK_HALF_HEIGHT;
+                    var step = (canvas.width - 2 * PAGE_PADDING) / MARKS_AT_AXIS;
+
+                    while (x < canvas.width - PAGE_PADDING) {
+                        path.moveTo(x, y);
+                        path.lineTo(x, y + MARK_HEIGHT);
+
+                        x += step;
+                    }
+                }
+
+                path.moveTo(canvas.width - PAGE_PADDING, canvas.height/2);
+                path.lineTo(canvas.width - 2 * PAGE_PADDING, canvas.height/2 - PAGE_PADDING/2);
+                path.moveTo(canvas.width - PAGE_PADDING, canvas.height/2);
+                path.lineTo(canvas.width - 2 * PAGE_PADDING, canvas.height/2 + PAGE_PADDING/2);
+
+                ctx.stroke(path);
+            }
+            
+            function drawYAxis (isDrawMarks) {
+                var path = new Path2D();
+
+                path.moveTo(canvas.width/2, PAGE_PADDING);
+                path.lineTo(canvas.width/2, canvas.height - PAGE_PADDING);
+
+                if (isDrawMarks) {
+                    var x = canvas.width/2 - MARK_HALF_HEIGHT;
+                    var y = PAGE_PADDING;
+                    var step = (canvas.height - 2 * PAGE_PADDING) / MARKS_AT_AXIS;
+                    y += step;
+
+                    while (y <= canvas.height - PAGE_PADDING) {
+                        path.moveTo(x, y);
+                        path.lineTo(x + MARK_HEIGHT , y);
+
+                        y += step;
+                    }
+                }
+
+                path.moveTo(canvas.width/2, PAGE_PADDING);
+                path.lineTo(canvas.width/2 - PAGE_PADDING/2, 2 * PAGE_PADDING);
+                path.moveTo(canvas.width/2, PAGE_PADDING);
+                path.lineTo(canvas.width/2 + PAGE_PADDING/2, 2 * PAGE_PADDING);
+                
+                ctx.stroke(path);
+            }
+            
+            function drawNDC() {
+                ctx.save();
+                
+                ctx.fillStyle = "blue";
+                
+                ctx.font = "32px serif";
+                ctx.fillText("x", canvas.width - 24, canvas.height/2 - 16);
+                ctx.fillText("y", canvas.width/2 - 24, 24);
+                
+                ctx.fillStyle = "black";
+                
+                ctx.font = "8px serif";
+                const X_AXIS_LABEL_PADDING = 16;
+                ctx.fillText("-1.0", PAGE_PADDING - 8, canvas.height/2 + X_AXIS_LABEL_PADDING);
+                ctx.fillText("1.0", canvas.width - PAGE_PADDING - 10, canvas.height/2 + X_AXIS_LABEL_PADDING);
+                ctx.fillText("0.0", canvas.width/2 + 6, canvas.height/2 + X_AXIS_LABEL_PADDING);
+                
+                const Y_AXIS_LABEL_PADDING = 8;
+                ctx.fillText(" 1.0", canvas.width/2 + Y_AXIS_LABEL_PADDING, PAGE_PADDING + 6);
+                ctx.fillText("-1.0", canvas.width/2 + Y_AXIS_LABEL_PADDING, canvas.height - PAGE_PADDING + 4);
+                
+                ctx.restore();
+            }
+            
+            window.onload = init;
+        </script>
+    </head>
+    <body>
+        <h1>OpenGL Coordinate System</h1>
+        <canvas id="coordinateCanvas" width="500" height="500">Your browser does not support Canvas!</canvas>
+    </body>
+</html>

@@ -8,10 +8,8 @@ using namespace std;
 const int WINDOW_WIDTH = 500;
 const int WINDOW_HEIGHT = 500;
 
-GLuint    VAOs[1];
-GLuint Buffers[1];
-
-const GLuint NumVertices = 6;
+GLuint VAOs[1];
+GLuint VBOs[1];
 
 void centerWindow() {
 	glutInitWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -33,17 +31,14 @@ void init(void) {
 	glGenVertexArrays(1, VAOs);
 	glBindVertexArray(VAOs[0]);
 
-	GLfloat vertices[NumVertices][2] = {
-		{ -0.90, -0.90 },  // Triangle 1
-		{  0.85, -0.90 },
-		{ -0.90,  0.85 },
-		{  0.90, -0.85 },  // Triangle 2
-		{  0.90,  0.90 },
-		{ -0.85,  0.90 },
+	GLfloat vertices[] = {
+		-1.0f, -1.0f,
+		 1.0f, -1.0f,
+		-1.0f,  1.0f
 	};
 
-	glGenBuffers(1, Buffers);
-	glBindBuffer(GL_ARRAY_BUFFER, Buffers[0]);
+	glGenBuffers(1, VBOs);
+	glBindBuffer(GL_ARRAY_BUFFER, VBOs[0]);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 	compileShaders();
@@ -58,7 +53,7 @@ void display() {
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	glBindVertexArray(VAOs[0]);
-	glDrawArrays(GL_TRIANGLES, 0, NumVertices);
+	glDrawArrays(GL_TRIANGLES, 0, 6);
 
 	glFlush();
 }
@@ -70,7 +65,7 @@ int main(int argc, char** argv) {
 
 	centerWindow();
 
-	//glutInitContextVersion(3, 1);
+	//glutInitContextVersion(3, 2);
 	glutInitContextProfile(GLUT_CORE_PROFILE);
 
 	glutCreateWindow("Triangles");
@@ -80,12 +75,12 @@ int main(int argc, char** argv) {
 		exit(EXIT_FAILURE);
 	}
 
-	if (GLEW_VERSION_4_4) {
-		cout << "Your graphics hardware supports OpenGL 4.4!" << endl;
-	}
-	else if (GLEW_VERSION_3_3) {
-		cout << "Your graphics hardware supports OpenGL 3.3!" << endl;
-	}
+	//if (GLEW_VERSION_4_4) {
+	//	cout << "Your graphics hardware supports OpenGL 4.4!" << endl;
+	//}
+	//else if (GLEW_VERSION_3_3) {
+	//	cout << "Your graphics hardware supports OpenGL 3.3!" << endl;
+	//}
 
 	init();
 

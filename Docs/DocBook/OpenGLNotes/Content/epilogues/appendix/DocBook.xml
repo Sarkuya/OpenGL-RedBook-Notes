@@ -37,7 +37,6 @@
     <section>
       <title>programlisting</title>
       <programlisting>&lt;programlisting&gt;&lt;![CDATA[
-
 ]]&gt;&lt;/programlisting&gt;
 </programlisting>
     </section>
@@ -51,6 +50,18 @@
 </orderedlist>
 ]]></programlisting>
     </section>
+    
+    <section>
+      <title>figure</title>
+      <programlisting><![CDATA[<figure>
+  <title>FIGURE_TITLE</title>
+  <imagedata fileref="chapters/CHAPTER_DIRECTORY/FIGURE_FILE_NAME.png" scalefit="1" width="100%" contentdepth="100%" />
+  <textobject><phrase>Figure_Description</phrase></textobject>
+</figure>
+]]></programlisting>
+    </section>
+    
+    
   </section>
   
   <section>

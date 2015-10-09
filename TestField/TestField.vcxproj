@@ -83,7 +83,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="TestField.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fs.glsl" />
